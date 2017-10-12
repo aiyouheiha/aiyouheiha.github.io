@@ -191,7 +191,7 @@ foobar.baz(p, c); // ParentChild
 
 > 被访问元素（Element）、访问者（Visitor）
 
-![Visitor Pattern UML](visitor-pattern-uml.png)
+![Visitor Pattern UML](visitor-pattern/visitor-pattern-uml.png)
 
 #### 被访问元素 Element
 
