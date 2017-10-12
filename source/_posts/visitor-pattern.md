@@ -8,6 +8,145 @@ tags:
 description: 一种将算法与对象结构分离的软件设计模式
 ---
 
+![Visitor Pattern UML](visitor-pattern/visitor-pattern-uml.png)
+
+-------------------------------------------------------
+
+## 访问者模式
+
+> 访问者模式（Visitor Pattern）是GoF提出的23种设计模式中的一种，属于行为模式。
+> 表示一个作用于某对象结构中的各元素的操作。
+> 通过访问者模式，可以在不改变各元素类的前提下定义作用于这些元素的新操作。
+
+### 访问者模式样例
+
+> 被访问元素（Element）、访问者（Visitor）
+
+Visitor的实现类中，定义了作用于各个对象结构（Element实现类Element1、Element2）中元素的具体操作。
+新增操作只需要新增Visitor的实现类，针对具体对象结构，定义新的操作即可，Element无需改动。
+
+#### 被访问元素 Element
+
+```
+public interface Element {
+    String info();
+    void accept(Visitor visitor);
+}
+
+class Element1 implements Element {
+
+    @Override
+    public String info() {
+        return "Element1";
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+
+class Element2 implements Element {
+
+    @Override
+    public String info() {
+        return "Element2";
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+```
+
+#### 访问者 Visitor
+
+```
+public interface Visitor {
+    void visit(Element1 element1);
+    void visit(Element2 element2);
+}
+
+class Visitor1 implements Visitor {
+
+    @Override
+    public void visit(Element1 element1) {
+        System.out.println("Visitor1 " + element1.info());
+    }
+
+    @Override
+    public void visit(Element2 element2) {
+        System.out.println("Visitor1 " + element2.info());
+    }
+}
+
+class Visitor2 implements Visitor {
+
+    @Override
+    public void visit(Element1 element1) {
+        System.out.println("Visitor2 " + element1.info());
+    }
+
+    @Override
+    public void visit(Element2 element2) {
+        System.out.println("Visitor2 " + element2.info());
+    }
+}
+```
+
+#### 使用
+
+```
+public class Client {
+    public static void main(String[] args) {
+        Element e1 = new Element1();
+        Element e2 = new Element2();
+
+        Visitor v1 = new Visitor1();
+        Visitor v2 = new Visitor2();
+
+        e1.accept(v1); // Visitor1 Element1
+        e1.accept(v2); // Visitor2 Element1
+
+        e2.accept(v1); // Visitor1 Element2
+        e2.accept(v2); // Visitor2 Element2
+    }
+}
+```
+
+#### 总结
+
+此处涉及到与 **方法分派** 相关的描述，如果对此不太了解，可以先浏览本文后半部分内容，再返回查看总结。
+
+- `element.accept(visitor);`
+    - element 为接收者，accept方法分派到element的实际类型
+
+- `visitor.visit(this);` in accept method
+    - visitor 为接收者，visit方法分派到visitor的实际类型
+    - this 为方法参数，在Java中根据其静态类型进行方法调用
+
+- **总结一**
+    - 通过 **访问者模式** 的第一步 `element.accept(visitor);` 操作，已经定位出element的实际类型
+    - 因此第二步操作中的 `visitor` 和 `this` 均为实际类型
+    - 通过 **实际类型** Visitor中重载的各个visit方法便可以被“准确”调用（以实际类型调用）
+    - 这便实现了 **模拟双分派**
+
+- **总结二**
+    - 访问者模式把 **数据结构** 和作用于结构上的 **操作** 解耦合，使得操作集合可相对自由地演化。
+    - 访问者模式适用于 **数据结构相对稳定** 以及 **算法易变化**的系统。
+        - 修改数据结构，则需要对Visitor的整个继承体系进行修改
+        - 修改对element的操作只需要增删改对应特定操作的Visitor子类即可
+
+- **总结三** 访问者模式适用场景
+    - **需求** 为一个现有的类增加新功能，需要考虑到以下问题
+        - 新功能会不会与现有功能出现兼容性问题？
+        - 以后会不会再需要添加？
+        - 如果类不允许修改代码怎么办？
+    - **应对** 面对这些问题，最好的解决方法就是使用访问者模式，将数据结构与算法解耦，
+
+-------------------------------------------------------
+
 ## 单分派与多分派
 
 > 访问者模式使得我们可以在传统的单分派（single-dispatch）语言（如Smalltalk、Java和C++）中模拟双分派技术。
@@ -179,139 +318,6 @@ foobar.baz(p, c); // ParentChild
     - Java是一种单分派语言
     - 多分派语言，则可以根据参数的实际类型进行方法的调用
 
----------------------------------------------------------
-
-## 访问者模式
-
-> 访问者模式（Visitor Pattern）是GoF提出的23种设计模式中的一种，属于行为模式。
-> 表示一个作用于 **某对象结构** 中的 **各元素** 的操作。
-> 通过访问者模式，可以在不改变各元素类的前提下定义作用于这些元素的新操作。
-
-### 访问者模式样例
-
-> 被访问元素（Element）、访问者（Visitor）
-
-![Visitor Pattern UML](visitor-pattern/visitor-pattern-uml.png)
-
-#### 被访问元素 Element
-
-```
-public interface Element {
-    String info();
-    void accept(Visitor visitor);
-}
-
-class Element1 implements Element {
-
-    @Override
-    public String info() {
-        return "Element1";
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-
-class Element2 implements Element {
-
-    @Override
-    public String info() {
-        return "Element2";
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-```
-
-#### 访问者 Visitor
-
-```
-public interface Visitor {
-    void visit(Element1 element1);
-    void visit(Element2 element2);
-}
-
-class Visitor1 implements Visitor {
-
-    @Override
-    public void visit(Element1 element1) {
-        System.out.println("Visitor1 " + element1.info());
-    }
-
-    @Override
-    public void visit(Element2 element2) {
-        System.out.println("Visitor1 " + element2.info());
-    }
-}
-
-class Visitor2 implements Visitor {
-
-    @Override
-    public void visit(Element1 element1) {
-        System.out.println("Visitor2 " + element1.info());
-    }
-
-    @Override
-    public void visit(Element2 element2) {
-        System.out.println("Visitor2 " + element2.info());
-    }
-}
-```
-
-#### 使用
-
-```
-public class Client {
-    public static void main(String[] args) {
-        Element e1 = new Element1();
-        Element e2 = new Element2();
-
-        Visitor v1 = new Visitor1();
-        Visitor v2 = new Visitor2();
-
-        e1.accept(v1); // Visitor1 Element1
-        e1.accept(v2); // Visitor2 Element1
-
-        e2.accept(v1); // Visitor1 Element2
-        e2.accept(v2); // Visitor2 Element2
-    }
-}
-```
-
-#### 总结
-
-- `element.accept(visitor);`
-    - element 为接收者，accept方法分派到element的实际类型
-
-- `visitor.visit(this);` in accept method
-    - visitor 为接收者，visit方法分派到visitor的实际类型
-    - this 为方法参数，在Java中根据其静态类型进行方法调用
-
-- **总结一**
-    - 通过 **访问者模式** 的第一步 `element.accept(visitor);` 操作，已经定位出element的实际类型
-    - 因此第二步操作中的 `visitor` 和 `this` 均为实际类型
-    - 通过 **实际类型** Visitor中重载的各个visit方法便可以被“准确”调用（以实际类型调用）
-    - 这便实现了 **模拟双分派**
-
-- **总结二**
-    - 访问者模式把 **数据结构** 和作用于结构上的 **操作** 解耦合，使得操作集合可相对自由地演化。
-    - 访问者模式适用于 **数据结构相对稳定** 以及 **算法易变化**的系统。
-        - 修改数据结构，则需要对Visitor的整个继承体系进行修改
-        - 修改对element的操作只需要增删改对应特定操作的Visitor子类即可
-
-- **总结三** 访问者模式适用场景
-    - **需求** 为一个现有的类增加新功能，需要考虑到以下问题
-        - 新功能会不会与现有功能出现兼容性问题？
-        - 以后会不会再需要添加？
-        - 如果类不允许修改代码怎么办？
-    - **应对** 面对这些问题，最好的解决方法就是使用访问者模式，将数据结构与算法解耦，
-
-
 ### 模拟双分派实例
 
 > 通过访问者模式，在单分派语言Java中模拟双分派技术
@@ -425,7 +431,7 @@ public class Foo extends Foobar {
 - 然后在 `accept` 方法中 `foobarVisitor.visit(this)`，foobarVisitor也被分配到了实际类型
 - 因此最后输出为 `ParentChild`，与之前不同，实现了模拟的双分派，基于方法接收者与方法参数
 
--------------------------------------------------------
+---------------------------------------------------------
 
 ## 引用
 
