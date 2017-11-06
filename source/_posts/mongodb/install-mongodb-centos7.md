@@ -80,9 +80,11 @@ $ touch mongod.log
 
 ## 启动服务
 
-**注** 下面的操作是直接在 root 权限下进行的！关于如何使用非 root 权限，以后也许会追加上吧……
+**注** 下面的操作是直接在 root 权限下进行的！~~关于如何使用非 root 权限，以后也许会追加上吧……~~
 
-……有需求的时候 (o゜▽゜)o☆
+~~……有需求的时候 (o゜▽゜)o☆~~
+
+如何使用非 root 用户启动，已经在下文添加，详见 [非 root 用户启动](#非-root-用户启动)
 
 ```
 $ su root
@@ -247,6 +249,139 @@ mongo x.x.x.x:27017/admin
 ```
 
 success
+
+## 设置访问密码
+
+创建用户
+
+```
+$ mongo
+> use admin
+switched to db admin
+> db
+admin
+> show users;
+> db.createUser({user:"admin",customData:{description:"superuser"},pwd:"123456",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
+Successfully added user: {
+	"user" : "admin",
+	"customData" : {
+		"description" : "superuser"
+	},
+	"roles" : [
+		{
+			"role" : "userAdminAnyDatabase",
+			"db" : "admin"
+		}
+	]
+}
+> show users;
+{
+	"_id" : "admin.admin",
+	"user" : "admin",
+	"db" : "admin",
+	"customData" : {
+		"description" : "superuser"
+	},
+	"roles" : [
+		{
+			"role" : "userAdminAnyDatabase",
+			"db" : "admin"
+		}
+	]
+}
+> db.system.users.find()
+{ "_id" : "admin.admin", "user" : "admin", "db" : "admin", "credentials" : { "SCRAM-SHA-1" : { "iterationCount" : 10000, "salt" : "nCwAg0p44iMPSvRs8DbNPA==", "storedKey" : "iaMRB6laIg0rwaq6JFMaVTEhaJM=", "serverKey" : "Nz1hnvn+KP9A+6VFvdxHSOdVHmk=" } }, "customData" : { "description" : "superuser" }, "roles" : [ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }
+> exit
+bye
+```
+
+- **[用户角色介绍](https://docs.mongodb.com/manual/reference/built-in-roles/)** 
+
+停止当前服务
+
+```
+$ sudo mongod --config /etc/mongod.conf --shutdown
+[sudo] password for mongo: 
+killing process with pid: 29076
+```
+
+**PS** 此处需要使用 `sudo` 是因为之前是通过 root 权限开启的 mongo 服务
+
+**HINT** 想要使用非 root 开启服务，除了在非 root 用户下启动，还需要将之前 root 权限才能访问的，数据、日志、以及配置文件的访问权限进行修改
+
+修改配置文件
+
+```
+$ sudo vim /etc/mongod.conf
+```
+
+增加以下内容
+
+```
+security:
+  authorization: enabled
+```
+
+之后重新启动即可，可继续使用 root 用户启动，也可参考下文 [非 root 用户启动](#非-root-用户启动)，配置非 root 用户启动。
+
+启动后，通过客户端登录。在各种命令执行时，将会提示没有权限，执行下面操作，**通过验证**，才可正常使用
+
+```
+> use admin
+switched to db admin
+> db.auth("admin", "123456")
+1
+> show dbs;
+admin  0.000GB
+local  0.000GB
+test   0.000GB
+```
+
+
+## 非 root 用户启动
+
+**PS** 改为使用 mongo 用户启动
+
+修改目录/文件访问权限
+
+```
+$ sudo chown -R mongo:mongo /etc/mongod.conf 
+$ ll /etc/mongod.conf 
+-rw-r--r-- 1 mongo mongo 834 Nov  6 11:14 /etc/mongod.conf
+$ sudo chown -R mongo:mongo /usr/local/mongodb/
+```
+
+重新启动
+
+```
+[mongo@x.x.x.x ~]$ mongod --config /etc/mongod.conf 
+about to fork child process, waiting until server is ready for connections.
+forked process: 26924
+ERROR: child process failed, exited with error number 1
+```
+
+出错，查看日志文件（几乎又忘记去看日志这件事了……）
+
+```
+2017-11-06T11:31:00.412+0800 I CONTROL  [main] ERROR: Cannot write pid file to /var/run/mongodb/mongod.pid: Permission denied
+```
+
+修改访问权限
+
+```
+$ sudo chown -R mongo:mongo /var/run/mongodb/
+```
+
+重新启动
+
+**PS** 在此之前，犯了经验主义错误，删除过锁文件和日志文件，而不是看日志找错误；如果启动失败，请自行查看日志，或者尝试删除锁文件和日志文件
+
+```
+$ mongod --config /etc/mongod.conf 
+about to fork child process, waiting until server is ready for connections.
+forked process: 27200
+child process started successfully, parent exiting
+```
 
 
 ## 参考链接
