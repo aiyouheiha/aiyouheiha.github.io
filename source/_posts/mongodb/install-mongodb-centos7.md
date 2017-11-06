@@ -256,6 +256,11 @@ success
 
 创建 root/admin 用户
 
+**PS** 
+- root/admin 用户并非是必须的，此处仅仅是以此作为演示。
+- 如果有一个想要删除的用户，且没有具有 root 权限的用户，在权限验证开启状态下，是无法进行删除操作的。
+- 一种操作流程：关闭服务 -> 修改配置文件（关闭权限验证） -> 重启服务 -> 按照需求增删用户 -> 重新开启验证 -> 重启服务。
+
 ```
 $ mongo
 > use admin
@@ -348,6 +353,8 @@ test   0.000GB
 需要说明的是，用户 admin 具有管理权限（无法读写），用户 root 具有最高权限，具体使用可以参考以下两个链接
 - **[用户角色介绍](https://docs.mongodb.com/manual/reference/built-in-roles/)** 
 - **[MongoDB用户角色配置](http://www.cnblogs.com/out-of-memory/p/6810411.html)**
+
+平时使用，配置一个具有读写权限的用户即可
 
 
 ## 非 root 用户启动
