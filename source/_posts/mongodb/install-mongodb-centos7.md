@@ -254,7 +254,7 @@ success
 
 ## 设置访问密码
 
-创建用户
+创建 root/admin 用户
 
 ```
 $ mongo
@@ -263,12 +263,11 @@ switched to db admin
 > db
 admin
 > show users;
-> db.createUser({user:"admin",customData:{description:"superuser"},pwd:"123456",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
+> db.createUser({user:"root",pwd:"123456",roles:["root"]})
+Successfully added user: { "user" : "root", "roles" : [ "root" ] }
+> db.createUser({user:"admin",pwd:"123456",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
 Successfully added user: {
 	"user" : "admin",
-	"customData" : {
-		"description" : "superuser"
-	},
 	"roles" : [
 		{
 			"role" : "userAdminAnyDatabase",
@@ -281,9 +280,6 @@ Successfully added user: {
 	"_id" : "admin.admin",
 	"user" : "admin",
 	"db" : "admin",
-	"customData" : {
-		"description" : "superuser"
-	},
 	"roles" : [
 		{
 			"role" : "userAdminAnyDatabase",
@@ -291,13 +287,23 @@ Successfully added user: {
 		}
 	]
 }
+{
+	"_id" : "admin.root",
+	"user" : "root",
+	"db" : "admin",
+	"roles" : [
+		{
+			"role" : "root",
+			"db" : "admin"
+		}
+	]
+}
 > db.system.users.find()
-{ "_id" : "admin.admin", "user" : "admin", "db" : "admin", "credentials" : { "SCRAM-SHA-1" : { "iterationCount" : 10000, "salt" : "nCwAg0p44iMPSvRs8DbNPA==", "storedKey" : "iaMRB6laIg0rwaq6JFMaVTEhaJM=", "serverKey" : "Nz1hnvn+KP9A+6VFvdxHSOdVHmk=" } }, "customData" : { "description" : "superuser" }, "roles" : [ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }
+{ "_id" : "admin.root", "user" : "root", "db" : "admin", "credentials" : { "SCRAM-SHA-1" : { "iterationCount" : 10000, "salt" : "yos3QUM0HICfWQuveww6Uw==", "storedKey" : "6ws6buooQaz5Eho068qX4HagpF8=", "serverKey" : "trfuBWIqVmy/Yl8Taj2E220GxK8=" } }, "roles" : [ { "role" : "root", "db" : "admin" } ] }
+{ "_id" : "admin.admin", "user" : "admin", "db" : "admin", "credentials" : { "SCRAM-SHA-1" : { "iterationCount" : 10000, "salt" : "zbIUq6Gcg5GunU5Pbd2R0A==", "storedKey" : "enwbhOQHH/8m/n/ww7lufaG32tU=", "serverKey" : "MOtEW78Qw6bfq1BoKVlW4daJHzY=" } }, "roles" : [ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }
 > exit
 bye
 ```
-
-- **[用户角色介绍](https://docs.mongodb.com/manual/reference/built-in-roles/)** 
 
 停止当前服务
 
@@ -307,7 +313,7 @@ $ sudo mongod --config /etc/mongod.conf --shutdown
 killing process with pid: 29076
 ```
 
-**PS** 此处需要使用 `sudo` 是因为之前是通过 root 权限开启的 mongo 服务
+**PS** 此处需要使用 `sudo` 是因为之前是通过 root 权限开启的 mongo 服务，请根据具体情况决定如何使用
 
 **HINT** 想要使用非 root 开启服务，除了在非 root 用户下启动，还需要将之前 root 权限才能访问的，数据、日志、以及配置文件的访问权限进行修改
 
@@ -338,6 +344,10 @@ admin  0.000GB
 local  0.000GB
 test   0.000GB
 ```
+
+需要说明的是，用户 admin 具有管理权限（无法读写），用户 root 具有最高权限，具体使用可以参考以下两个链接
+- **[用户角色介绍](https://docs.mongodb.com/manual/reference/built-in-roles/)** 
+- **[MongoDB用户角色配置](http://www.cnblogs.com/out-of-memory/p/6810411.html)**
 
 
 ## 非 root 用户启动
@@ -389,3 +399,4 @@ child process started successfully, parent exiting
 ## 参考链接
 
 - [Install MongoDB Community Edition](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/#install-mongodb-community-edition)
+- [MongoDB用户角色配置](http://www.cnblogs.com/out-of-memory/p/6810411.html)
