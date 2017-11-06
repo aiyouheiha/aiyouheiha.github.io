@@ -132,6 +132,8 @@ mongod \
 
 ## 可能出现的报错
 
+**HINT** 仅仅是可能出现的错误原因，以供参考。最好的办法依旧是 **查看运行日志中记录的错误原因**
+
 ```
 ERROR: child process failed, exited with error number 1
 ```
@@ -143,7 +145,7 @@ ERROR: child process failed, exited with error number 1
 ERROR: child process failed, exited with error number 100
 ```
 
-上面错误，可能是没有正常关闭导致的，那么可以删除 mongod.lock 文件，再行启动，可能会用到
+上面错误，可能是没有正常关闭导致的，那么可以删除 mongod.lock 文件，再行启动，可能会用到修复模式
 
 **PS** 锁和日志文件，在 mongod.conf 的指定目录下
 
