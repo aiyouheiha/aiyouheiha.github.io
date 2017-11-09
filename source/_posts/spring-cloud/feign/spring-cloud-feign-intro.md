@@ -64,9 +64,9 @@ public interface StoreClient {
 }
 ```
 
+通过 `@FeignClient(name = "stores", url = "http://example.com/")` 创建，则只会向指定好的 url 发送请求
 
-
-
+**注意** `@PathVariable("storeId")` 中的参数 `storeId` 与在 Controller 中使用不尽相同，**不可以** 省略
 
 
 
