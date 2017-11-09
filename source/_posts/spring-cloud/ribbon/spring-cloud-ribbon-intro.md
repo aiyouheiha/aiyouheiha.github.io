@@ -6,7 +6,8 @@ tags:
     - Spring Cloud
     - Spring Boot
     - Java
-keywords: Spring Cloud, Spring Boot, Java
+    - Ribbon
+keywords: Spring Cloud, Spring Boot, Java, Ribbon
 ---
 
 - 基于 HTTP 和 TCP 的 **客户端** 负载均衡工具
@@ -16,6 +17,8 @@ keywords: Spring Cloud, Spring Boot, Java
 
 ## 依赖
 
+Eureka + Ribbon:
+
 ```
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
@@ -23,11 +26,16 @@ keywords: Spring Cloud, Spring Boot, Java
 </dependency>
 ```
 
-`spring-cloud-starter-eureka` 已包含必要依赖：
-- `spring-boot-starter-web`
-- `spring-cloud-starter`
-- `spring-cloud-netflix-eureka-client`
-- `spring-cloud-starter-ribbon`
+`spring-cloud-starter-eureka` 已包含必要依赖，其中包括 Ribbon 相关
+
+Ribbon:
+
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-ribbon</artifactId>
+</dependency>
+```
 
 
 ## 使用
