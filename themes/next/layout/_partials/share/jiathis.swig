@@ -5,8 +5,11 @@
 <a class="jiathis_button_copy">复制网址</a>
 <a class="jiathis_button_email">邮件</a>
 <a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_cqq">QQ</a>
+<a class="jiathis_button_tsina">微博</a>
+<a class="jiathis_button_ydnote">有道云笔记</a>
+<!-- <a class="jiathis_button_qzone">QQ空间</a> -->
+<!-- <a class="jiathis_button_tqq">腾讯微博</a> -->
 <a class="jiathis_button_douban">豆瓣</a>
 <a class="jiathis_button_share">一键分享</a>
 
