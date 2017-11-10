@@ -18,6 +18,8 @@ Ribbon + RestTemplate 以拼接字符串的形式构造 URL
 - 低效
 - 难以维护
 
+[Demo Address](https://github.com/singoasher/spring-cloud-feign-demo)
+
 <!-- more -->
 
 ## 依赖
