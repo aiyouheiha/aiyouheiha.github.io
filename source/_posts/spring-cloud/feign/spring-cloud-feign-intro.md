@@ -71,7 +71,6 @@ public interface StoreClient {
 
 ```java
 @RestController
-@RequestMapping
 public class MyController {
     @Autowired
     private StoreClient storeClient;
@@ -347,6 +346,94 @@ public interface NonExistenceService {
 **WARNING**
 - There is a limitation with the implementation of fallbacks in Feign and how Hystrix fallbacks work. 
 - Fallbacks are currently not supported for methods that return com.netflix.hystrix.HystrixCommand and rx.Observable.
+
+
+## Feign Inheritance Support
+
+Feign supports boilerplate apis via single-inheritance interfaces. This allows grouping common operations into convenient base interfaces.
+
+公共接口
+
+```java
+public interface UserService {
+
+    @RequestMapping(method = RequestMethod.GET, value ="/users/{id}")
+    User getUser(@PathVariable("id") long id);
+}
+```
+
+服务实现
+
+```java
+@RestController
+public class UserResource implements UserService {
+
+}
+```
+
+通过 @FeignClient 创建负载均衡器，以供客户端实现使用
+
+```java
+@FeignClient("users")
+public interface UserClient extends UserService {
+
+}
+```
+
+**NOTE**
+- **不推荐** It is generally **NOT** advisable to share an interface between a server and a client. 
+- **紧耦合/机制差异** It introduces tight coupling, and also actually does not work with Spring MVC in its current form (method parameter mapping is not inherited).
+
+
+## Feign request/response compression
+
+You may consider enabling the request or response GZIP compression for your Feign requests. You can do this by enabling one of the properties:
+
+```
+feign.compression.request.enabled=true
+feign.compression.response.enabled=true
+```
+
+Feign request compression gives you settings similar to what you may set for your web server:
+
+```
+feign.compression.request.enabled=true
+feign.compression.request.mime-types=text/xml,application/xml,application/json
+feign.compression.request.min-request-size=2048
+```
+
+These properties allow you to be selective about the compressed media types and minimum request threshold length.
+
+
+## Feign logging
+
+A logger is created for each Feign client created. 
+By default the name of the logger is the full class name of the interface used to create the Feign client. 
+Feign logging only responds to the DEBUG level.
+
+```yaml
+logging:
+  level:
+    top.sinfonia.UserClient: DEBUG
+```
+
+The Logger.Level object that you may configure per client, tells Feign how much to log. Choices are:
+- NONE, No logging (DEFAULT).
+- BASIC, Log only the request method and URL and the response status code and execution time.
+- HEADERS, Log the basic information along with request and response headers.
+- FULL, Log the headers, body, and metadata for both requests and responses.
+
+For example, the following would set the Logger.Level to FULL:
+
+```
+@Configuration
+public class FooConfiguration {
+    @Bean
+    Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
+    }
+}
+```
 
 
 ## Creating Feign Clients Manually
