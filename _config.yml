@@ -16,6 +16,10 @@ url: http://ashman.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Directory
 source_dir: source
@@ -81,3 +85,5 @@ deploy:
   type: git
   repo: https://github.com/singoasher/singoasher.github.io.git
   branch: master
+
+
