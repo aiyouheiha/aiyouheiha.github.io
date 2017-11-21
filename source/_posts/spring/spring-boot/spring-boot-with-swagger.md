@@ -9,6 +9,10 @@ tags:
 keywords: Spring Boot, Swagger, RESTful API
 ---
 
+> THE WORLD'S MOST POPULAR API TOOLING
+
+<!-- more -->
+
 ## 依赖
 
 ```
@@ -92,11 +96,21 @@ return new ResponseEntity<UiConfiguration>(
 }
 ```
 
-这导致了切面方法无法正常执行，也就无法正常使用 Swagger 的 UI 功能。
+这导致了切面调用的 `getMethod` 方法无法正常执行，抛出 `NoSuchMethodException` 异常：
+
+```
+// getMethod 方法代码片段
+if (method == null) {
+    throw new NoSuchMethodException(getName() + "." + name + argumentTypesToString(parameterTypes));
+}
+```
+
+也就导致无法正常使用 Swagger 的 UI 功能。
 
 
 ## 参考链接
 
+- [World's Most Popular API Framework | Swagger](https://swagger.io/)
 - [Spring Boot 集成 Swagger2 - 构建优雅的 Restful API](http://blog.csdn.net/forezp/article/details/71023536)
 
 
