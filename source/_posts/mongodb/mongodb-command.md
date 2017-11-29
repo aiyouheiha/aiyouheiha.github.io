@@ -133,4 +133,9 @@ db.getCollection('test').update(
 )
 ```
 
+## 删除文档
+
+```
+db.getCollection('test').remove({"id": "yyy"})
+```
 
