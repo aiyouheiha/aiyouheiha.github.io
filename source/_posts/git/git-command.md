@@ -104,12 +104,13 @@ v0.0.2-light    update xxx
 
 通常 `git push` 不会将标签提交，需显式操作：
 
-- 提交 v0.0.1 标签
+提交 v0.0.1 标签
+
 ```
 $ git push origin v0.0.1
 ```
 
-- 提交本地所有标签
+提交本地所有标签
 
 ```
 $ git push origin --tags
