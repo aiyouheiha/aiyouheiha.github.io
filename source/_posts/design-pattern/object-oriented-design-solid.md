@@ -1,11 +1,12 @@
 ---
 title: SOLID (object-oriented design)
 date: 2017-12-11 11:24:17
-categories: "Object Oriented"
+categories: "设计模式"
 tags:
+    - 设计模式
     - Object Oriented
     - SOLID
-keywords: Object Oriented, SOLID
+keywords: 设计模式, Object Oriented, SOLID
 ---
 
 **SOLID** - 助记缩写词，对应五个程序设计原则
