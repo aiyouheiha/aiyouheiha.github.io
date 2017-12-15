@@ -12,9 +12,61 @@ keywords: Front End, gulp
 
 <!-- more -->
 
+## 初识
+
+全局安装
+
 ```
-$ cnpm install gulp-cli -g
-$ cnpm install gulp -D
+$ sudo npm install gulp -g
+```
+
+定位到 **项目根目录**，作为项目的开发依赖（devDependencies）安装
+
+```
+$ npm install gulp --save-dev
+```
+
+在项目根目录下创建一个名为 `gulpfile.js` 的文件
+
+```
 $ touch gulpfile.js
-$ gulp --help
 ```
+
+编辑文件，添加 gulp 任务，其中 `default` 为默认任务
+
+```
+var gulp = require('gulp');
+
+gulp.task('default', function() {
+    console.log('default run');
+});
+
+gulp.task('hello', function() {
+    console.log('Hello World');
+});
+```
+
+直接运行 gulp 会执行默认任务（等价于执行 `gulp default`）
+
+```
+$ gulp
+[17:21:09] Using gulpfile ~/test/gulp/gulpfile.js
+[17:21:09] Starting 'default'...
+default run
+[17:21:09] Finished 'default' after 130 μs
+```
+
+执行指定任务（如 `hello`），则可使用如下命令
+
+```
+$ gulp hello
+[17:20:42] Using gulpfile ~/test/gulp/gulpfile.js
+[17:20:42] Starting 'hello'...
+Hello World
+[17:20:42] Finished 'hello' after 126 μs
+```
+
+
+
+
+
