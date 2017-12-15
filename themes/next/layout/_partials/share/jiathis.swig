@@ -1,6 +1,6 @@
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-<span class="jiathis_txt">分享</span>
+<span class="jiathis_txt">戳这里：</span>
 <a class="jiathis_button_cqq"></a>
 <a class="jiathis_button_weixin"></a>
 <a class="jiathis_button_tsina"></a>
