@@ -6,7 +6,7 @@
 <a class="jiathis_button_tsina"></a>
 <a class="jiathis_button_ydnote"></a>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a href="http://www.jiathis.com/share?uid=2151823" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
 <a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
