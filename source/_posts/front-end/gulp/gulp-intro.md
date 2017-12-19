@@ -100,7 +100,7 @@ Current package.json
 ```
 
 Current gulpfile
-    - 必须命名为 **gulpfile.babel.js** 否则无法正确识别
+    - 必须命名为 `gulpfile.babel.js` 否则无法正确识别
 
 ```
 import gulp from 'gulp';
