@@ -73,7 +73,7 @@ Hello World
 > Babel is a JavaScript compiler. Use next generation JavaScript, today.
 
 Install the Babel CLI and a preset
-    - 安装 `babel-cli` 和 `babel-preset-env`
+- 安装 `babel-cli` 和 `babel-preset-env`
 
 ```
 npm install --save-dev babel-cli babel-preset-env
@@ -100,7 +100,7 @@ Current package.json
 ```
 
 Current gulpfile
-    - 必须命名为 `gulpfile.babel.js` 否则无法正确识别
+- 必须命名为 `gulpfile.babel.js` 否则无法正确识别
 
 ```
 import gulp from 'gulp';
