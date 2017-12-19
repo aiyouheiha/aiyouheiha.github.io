@@ -66,7 +66,58 @@ Hello World
 [17:20:42] Finished 'hello' after 126 μs
 ```
 
+## Babel
 
+- [Babel](http://babeljs.io/)
 
+> Babel is a JavaScript compiler. Use next generation JavaScript, today.
+
+Install the Babel CLI and a preset
+    - 安装 `babel-cli` 和 `babel-preset-env`
+
+```
+npm install --save-dev babel-cli babel-preset-env
+```
+
+Create a .babelrc file (or use your package.json)
+
+```json
+{
+  "presets": ["env"]
+}
+```
+
+Current package.json
+
+```json
+{
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1"
+  }
+}
+```
+
+Current gulpfile
+    - 必须命名为 **gulpfile.babel.js** 否则无法正确识别
+
+```
+import gulp from 'gulp';
+
+gulp.task('default', () => {
+    console.log("Default");
+});
+```
+
+```
+$ gulp
+[17:14:34] Failed to load external module @babel/register
+[17:14:34] Requiring external module babel-register
+[17:14:35] Using gulpfile ~/test/gulp/gulpfile.babel.js
+[17:14:35] Starting 'default'...
+Default
+[17:14:35] Finished 'default' after 120 μs
+```
 
 
