@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Spring Cloud, Spring Boot, Java, Feign" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Singo & Asher" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="It makes writing web service clients easier.   声明式服务调用 Ribbon + RestTemplate 以拼接字符串的形式构造 URL  低效 难以维护  Demo Address">
+<meta name="keywords" content="Spring Cloud, Spring Boot, Java, Feign">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Cloud Feign 简介">
+<meta property="og:url" content="http://ashman.top/2017/11/09/spring/spring-cloud/feign/spring-cloud-feign-intro/index.html">
+<meta property="og:site_name" content="Singo &amp; Asher">
+<meta property="og:description" content="It makes writing web service clients easier.   声明式服务调用 Ribbon + RestTemplate 以拼接字符串的形式构造 URL  低效 难以维护  Demo Address">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-21T15:32:33.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Cloud Feign 简介">
+<meta name="twitter:description" content="It makes writing web service clients easier.   声明式服务调用 Ribbon + RestTemplate 以拼接字符串的形式构造 URL  低效 难以维护  Demo Address">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ashman.top/2017/11/09/spring/spring-cloud/feign/spring-cloud-feign-intro/"/>
+
+
+
+
+
+  <title>Spring Cloud Feign 简介 | Singo & Asher</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/singoasher"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Singo & Asher</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">世间万物皆有定数</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ashman.top/2017/11/09/spring/spring-cloud/feign/spring-cloud-feign-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Asher">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Singo & Asher">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Cloud Feign 简介</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T18:26:37+08:00">
+                2017-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Cloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Cloud</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,909
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p> It makes writing web service clients easier. </p>
+</blockquote>
+<p>声明式服务调用</p>
+<p>Ribbon + RestTemplate 以拼接字符串的形式构造 URL</p>
+<ul>
+<li>低效</li>
+<li>难以维护</li>
+</ul>
+<p><a href="https://github.com/singoasher/spring-cloud-feign-demo" target="_blank" rel="noopener">Demo Address</a></p>
+<a id="more"></a>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-feign<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>注解 <code>@EnableFeignClients</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConsumerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConsumerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 <code>@FeignClient(&quot;stores&quot;)</code> 创建 Ribbon 负载均衡器，<code>stores</code> 为用于创建 Ribbon 负载均衡器的客户端名称</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(<span class="string">"stores"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StoreClient</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.GET, value = <span class="string">"/stores"</span>)</span><br><span class="line">    <span class="function">List&lt;Store&gt; <span class="title">getStores</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.POST, value = <span class="string">"/stores/&#123;storeId&#125;"</span>, consumes = <span class="string">"application/json"</span>)</span><br><span class="line">    <span class="function">Store <span class="title">update</span><span class="params">(@PathVariable(<span class="string">"storeId"</span>)</span> Long storeId, Store store)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<ul>
+<li>通过 <code>@FeignClient(name = &quot;stores&quot;, url = &quot;http://example.com/&quot;)</code> 创建，则只会向指定好的 url 发送请求</li>
+<li>注解 <code>@PathVariable(&quot;storeId&quot;)</code> 中的参数 <code>storeId</code> 与在 Controller 中使用不尽相同，参数 <strong>不可以</strong> 省略</li>
+</ul>
+<p>在 Controller 中使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> StoreClient storeClient;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity&lt;List&gt; <span class="title">getStores</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(storeClient.getStores());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/&#123;value&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity&lt;String&gt; <span class="title">update</span><span class="params">(@PathVariable String value, @RequestBody Store store)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(storeClient.update(value, store));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="About-FeignClient"><a href="#About-FeignClient" class="headerlink" title="About @FeignClient"></a>About @FeignClient</h3><ul>
+<li>The serviceId attribute is now deprecated in favor of the name attribute.</li>
+<li>Previously, using the url attribute, did not require the name attribute. Using name is now required.</li>
+<li>Placeholders are supported in the name and url attributes.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"$&#123;feign.name&#125;"</span>, url = <span class="string">"$&#123;feign.url&#125;"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StoreClient</span> </span>&#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>默认配置 <code>org.springframework.cloud.netflix.feign.FeignClientsConfiguration</code></p>
+<h3 id="配置类"><a href="#配置类" class="headerlink" title="配置类"></a>配置类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Contract <span class="title">feignContract</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> feign.Contract.Default();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> BasicAuthRequestInterceptor <span class="title">basicAuthRequestInterceptor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BasicAuthRequestInterceptor(<span class="string">"user"</span>, <span class="string">"password"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong></p>
+<ul>
+<li>FooConfiguration does not need to be annotated with @Configuration. </li>
+<li>However, if it is, then take care to exclude it from any @ComponentScan <ul>
+<li>that would otherwise include this configuration as it will become the default source </li>
+<li>for feign.Decoder, feign.Encoder, feign.Contract, etc., when specified. </li>
+</ul>
+</li>
+<li>This can be avoided by putting it in a separate, non-overlapping package from any @ComponentScan or @SpringBootApplication, <ul>
+<li>or it can be explicitly excluded in @ComponentScan.</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置使能-FeignClient"><a href="#配置使能-FeignClient" class="headerlink" title="配置使能 @FeignClient"></a>配置使能 @FeignClient</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"stores"</span>, configuration = FooConfiguration.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StoreClient</span> </span>&#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置介绍"><a href="#配置介绍" class="headerlink" title="配置介绍"></a>配置介绍</h3><p>Spring Cloud Netflix provides the following beans by default for feign (BeanType beanName: ClassName):</p>
+<ul>
+<li>Decoder feignDecoder: ResponseEntityDecoder (which wraps a SpringDecoder)</li>
+<li>Encoder feignEncoder: SpringEncoder</li>
+<li>Logger feignLogger: Slf4jLogger</li>
+<li>Contract feignContract: SpringMvcContract</li>
+<li>Feign.Builder feignBuilder: HystrixFeign.Builder</li>
+<li>Client feignClient: if Ribbon is enabled it is a LoadBalancerFeignClient, otherwise the default feign client is used.</li>
+</ul>
+<p>The OkHttpClient and ApacheHttpClient feign clients can be used by setting feign.okhttp.enabled or feign.httpclient.enabled to true, respectively, and having them on the classpath.</p>
+<p>Spring Cloud Netflix does not provide the following beans by default for feign, but still looks up beans of these types from the application context to create the feign client:</p>
+<ul>
+<li>Logger.Level</li>
+<li>Retryer</li>
+<li>ErrorDecoder</li>
+<li>Request.Options</li>
+<li>Collection<requestinterceptor></requestinterceptor></li>
+<li>SetterFactory</li>
+</ul>
+<h3 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h3><p>默认 NEVER_RETRY</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">@ConditionalOnMissingBean</span><br><span class="line">public Retryer feignRetryer() &#123;</span><br><span class="line">    return Retryer.NEVER_RETRY;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public Retryer feignRetryer() &#123;</span><br><span class="line">    return new Retryer.Default(100, SECONDS.toMillis(1), 3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="契约"><a href="#契约" class="headerlink" title="契约"></a>契约</h3><p>默认 SpringMvcContract</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">@ConditionalOnMissingBean</span><br><span class="line">public Contract feignContract(ConversionService feignConversionService) &#123;</span><br><span class="line">    return new SpringMvcContract(this.parameterProcessors, feignConversionService);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义，改为 Feign Contract.Default</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public Contract feignContract() &#123;</span><br><span class="line">    return new Contract.Default();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时启用该配置的客户端，需要将 Spring MVC 注解，修改为 Feign 的默认注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"stores"</span>, configuration = FooConfiguration.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StoreClient</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestLine</span>(<span class="string">"GET /stores"</span>)</span><br><span class="line">    <span class="function">String <span class="title">getStores</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Use-ThreadLocal-bound-variables-in-RequestInterceptor"><a href="#Use-ThreadLocal-bound-variables-in-RequestInterceptor" class="headerlink" title="Use ThreadLocal bound variables in RequestInterceptor"></a>Use ThreadLocal bound variables in RequestInterceptor</h2><p>You will need to either set the thread isolation strategy for Hystrix to `SEMAPHORE or disable Hystrix in Feign.</p>
+<p>application.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># To disable Hystrix in Feign</span><br><span class="line">feign:</span><br><span class="line">  hystrix:</span><br><span class="line">    enabled: false</span><br><span class="line"></span><br><span class="line"># To set thread isolation to SEMAPHORE</span><br><span class="line">hystrix:</span><br><span class="line">  command:</span><br><span class="line">    default:</span><br><span class="line">      execution:</span><br><span class="line">        isolation:</span><br><span class="line">          strategy: SEMAPHORE</span><br></pre></td></tr></table></figure>
+<h2 id="Feign-Hystrix-Support"><a href="#Feign-Hystrix-Support" class="headerlink" title="Feign Hystrix Support"></a>Feign Hystrix Support</h2><h3 id="使能"><a href="#使能" class="headerlink" title="使能"></a>使能</h3><p>If Hystrix is on the classpath and feign.hystrix.enabled=true, Feign will wrap all methods with a circuit breaker. </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line"><span class="attr">  hystrix:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>默认为 false</p>
+<p><strong>WARNING</strong></p>
+<ul>
+<li>Prior to the Spring Cloud Dalston release, if Hystrix was on the classpath Feign would have wrapped all methods in a circuit breaker by default. </li>
+<li>This default behavior was changed in Spring Cloud Dalston in favor for an opt-in approach.</li>
+</ul>
+<p>To disable Hystrix support on a per-client basis create a vanilla Feign.Builder with the “prototype” scope, e.g.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class FooConfiguration &#123;</span><br><span class="line">    @Bean</span><br><span class="line">	@Scope(&quot;prototype&quot;)</span><br><span class="line">	public Feign.Builder feignBuilder() &#123;</span><br><span class="line">		return Feign.builder();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Feign-Hystrix-Fallbacks"><a href="#Feign-Hystrix-Fallbacks" class="headerlink" title="Feign Hystrix Fallbacks"></a>Feign Hystrix Fallbacks</h3><p>增加 Fallback 类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonExistenceServiceFallback</span> <span class="keyword">implements</span> <span class="title">NonExistenceService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Fallback Hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为 @FeignClient 配置 fallback 属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"non-existence"</span>, fallback = NonExistenceServiceFallback.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">NonExistenceService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.GET, value = <span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Feign and @Primary</strong></p>
+<ul>
+<li>When using Feign with Hystrix fallbacks, there are multiple beans in the ApplicationContext of the same type. </li>
+<li>This will cause @Autowired to not work because there isn’t exactly one bean, or one marked as primary. </li>
+<li>To work around this, Spring Cloud Netflix marks <strong>all Feign instances</strong> as @Primary, so Spring Framework will know which bean to inject. </li>
+</ul>
+<p><strong>说明</strong></p>
+<ul>
+<li>Spring Cloud Netflix marks all Feign instances as @Primary.<ul>
+<li>Spring Cloud Netflix 这样做了，但是在 IDEA 中，使用 @Autowire 时，IDE 依旧会给出下面的告警<ul>
+<li>Could not autowire. There is more than one bean of ‘NonExistenceService’ type.</li>
+<li><strong>这并不会影响真正的使用</strong></li>
+</ul>
+</li>
+<li><strong>没什么用的提醒</strong><ul>
+<li>给 NonExistenceService 接口加上 @Primary 可以避免这种 IDE 告警 <strong>BUT</strong> 这是个 <strong>接口</strong>，加上这个注解并 <strong>不会</strong> 有实际作用</li>
+<li>如果像下文 <code>@FeignClient(name = &quot;hello&quot;, primary = false)</code> 关闭了自动 @Primary 注解，启动应用将会 <strong>出错！！！</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In some cases, this may not be desirable. To turn off this behavior set the primary attribute of @FeignClient to false.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"hello"</span>, primary = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">HelloClient</span> </span>&#123;</span><br><span class="line">	<span class="comment">// methods here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If one needs access to the cause that made the fallback trigger, one can use the fallbackFactory attribute inside @FeignClient.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonExistenceServiceFallback</span> <span class="keyword">implements</span> <span class="title">NonExistenceService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Fallback Hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonExistenceServiceFallbackFactory</span> <span class="keyword">implements</span> <span class="title">FallbackFactory</span>&lt;<span class="title">NonExistenceService</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> NonExistenceService <span class="title">create</span><span class="params">(Throwable throwable)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> NonExistenceServiceFallback();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"non-existence"</span>, fallbackFactory = NonExistenceServiceFallbackFactory.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">NonExistenceService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.GET, value = <span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>没什么用的提醒</strong> 使用工厂顺便可以解决上文中提到的 IDE 告警问题（一个并不需要解决的问题哈）</p>
+<p><strong>WARNING</strong></p>
+<ul>
+<li>There is a limitation with the implementation of fallbacks in Feign and how Hystrix fallbacks work. </li>
+<li>Fallbacks are currently not supported for methods that return com.netflix.hystrix.HystrixCommand and rx.Observable.</li>
+</ul>
+<h2 id="Feign-Inheritance-Support"><a href="#Feign-Inheritance-Support" class="headerlink" title="Feign Inheritance Support"></a>Feign Inheritance Support</h2><p>Feign supports boilerplate apis via single-inheritance interfaces. This allows grouping common operations into convenient base interfaces.</p>
+<p>公共接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.GET, value =<span class="string">"/users/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function">User <span class="title">getUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">long</span> id)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>服务实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserResource</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 @FeignClient 创建负载均衡器，以供客户端实现使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(<span class="string">"users"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserClient</span> <span class="keyword">extends</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong></p>
+<ul>
+<li><strong>不推荐</strong> It is generally <strong>NOT</strong> advisable to share an interface between a server and a client. </li>
+<li><strong>紧耦合/机制差异</strong> It introduces tight coupling, and also actually does not work with Spring MVC in its current form (method parameter mapping is not inherited).</li>
+</ul>
+<h2 id="Feign-request-response-compression"><a href="#Feign-request-response-compression" class="headerlink" title="Feign request/response compression"></a>Feign request/response compression</h2><p>You may consider enabling the request or response GZIP compression for your Feign requests. You can do this by enabling one of the properties:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">feign.compression.request.enabled=true</span><br><span class="line">feign.compression.response.enabled=true</span><br></pre></td></tr></table></figure>
+<p>Feign request compression gives you settings similar to what you may set for your web server:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">feign.compression.request.enabled=true</span><br><span class="line">feign.compression.request.mime-types=text/xml,application/xml,application/json</span><br><span class="line">feign.compression.request.min-request-size=2048</span><br></pre></td></tr></table></figure>
+<p>These properties allow you to be selective about the compressed media types and minimum request threshold length.</p>
+<h2 id="Feign-logging"><a href="#Feign-logging" class="headerlink" title="Feign logging"></a>Feign logging</h2><p>A logger is created for each Feign client created.<br>By default the name of the logger is the full class name of the interface used to create the Feign client.<br>Feign logging only responds to the DEBUG level.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line"><span class="attr">  level:</span></span><br><span class="line">    <span class="string">top.sinfonia.UserClient:</span> <span class="string">DEBUG</span></span><br></pre></td></tr></table></figure>
+<p>The Logger.Level object that you may configure per client, tells Feign how much to log. Choices are:</p>
+<ul>
+<li>NONE, No logging (DEFAULT).</li>
+<li>BASIC, Log only the request method and URL and the response status code and execution time.</li>
+<li>HEADERS, Log the basic information along with request and response headers.</li>
+<li>FULL, Log the headers, body, and metadata for both requests and responses.</li>
+</ul>
+<p>For example, the following would set the Logger.Level to FULL:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class FooConfiguration &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    Logger.Level feignLoggerLevel() &#123;</span><br><span class="line">        return Logger.Level.FULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Creating-Feign-Clients-Manually"><a href="#Creating-Feign-Clients-Manually" class="headerlink" title="Creating Feign Clients Manually"></a>Creating Feign Clients Manually</h2><p>In some cases it might be necessary to customize your Feign Clients in a way that is not possible using the methods above. In this case you can create Clients using the Feign Builder API. Below is an example which creates two Feign Clients with the same interface but configures each one with a separate request interceptor.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Import</span>(FeignClientsConfiguration.class)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> FooClient fooClient;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> FooClient adminClient;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FooController</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">			Decoder decoder, Encoder encoder, Client client)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.fooClient = Feign.builder().client(client)</span><br><span class="line">				.encoder(encoder)</span><br><span class="line">				.decoder(decoder)</span><br><span class="line">				.requestInterceptor(<span class="keyword">new</span> BasicAuthRequestInterceptor(<span class="string">"user"</span>, <span class="string">"user"</span>))</span><br><span class="line">				.target(FooClient.class, <span class="string">"http://PROD-SVC"</span>);</span><br><span class="line">		<span class="keyword">this</span>.adminClient = Feign.builder().client(client)</span><br><span class="line">				.encoder(encoder)</span><br><span class="line">				.decoder(decoder)</span><br><span class="line">				.requestInterceptor(<span class="keyword">new</span> BasicAuthRequestInterceptor(<span class="string">"admin"</span>, <span class="string">"admin"</span>))</span><br><span class="line">				.target(FooClient.class, <span class="string">"http://PROD-SVC"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>In the above example FeignClientsConfiguration.class is the default configuration provided by Spring Cloud Netflix.</li>
+<li>PROD-SVC is the name of the service the Clients will be making requests to.</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://cloud.spring.io/spring-cloud-static/Dalston.SR3/" target="_blank" rel="noopener">Spring Cloud</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Spring-Boot/" rel="tag"># Spring Boot</a>
+          
+            <a href="/tags/Spring-Cloud/" rel="tag"># Spring Cloud</a>
+          
+            <a href="/tags/Feign/" rel="tag"># Feign</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/" rel="next" title="Spring Cloud Ribbon 简介">
+                <i class="fa fa-chevron-left"></i> Spring Cloud Ribbon 简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/12/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">戳这里：</span>
+<a class="jiathis_button_cqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_ydnote"></a>
+
+<a href="http://www.jiathis.com/share?uid=2151823" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2151823" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Asher</p>
+              <p class="site-description motion-element" itemprop="description">静坐常思己过，闲谈莫论人非</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/singoasher" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖"><span class="nav-number">1.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#About-FeignClient"><span class="nav-number">2.1.</span> <span class="nav-text">About @FeignClient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义配置"><span class="nav-number">3.</span> <span class="nav-text">自定义配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置类"><span class="nav-number">3.1.</span> <span class="nav-text">配置类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置使能-FeignClient"><span class="nav-number">3.2.</span> <span class="nav-text">配置使能 @FeignClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置介绍"><span class="nav-number">3.3.</span> <span class="nav-text">配置介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重试"><span class="nav-number">3.4.</span> <span class="nav-text">重试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#契约"><span class="nav-number">3.5.</span> <span class="nav-text">契约</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-ThreadLocal-bound-variables-in-RequestInterceptor"><span class="nav-number">4.</span> <span class="nav-text">Use ThreadLocal bound variables in RequestInterceptor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign-Hystrix-Support"><span class="nav-number">5.</span> <span class="nav-text">Feign Hystrix Support</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使能"><span class="nav-number">5.1.</span> <span class="nav-text">使能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feign-Hystrix-Fallbacks"><span class="nav-number">5.2.</span> <span class="nav-text">Feign Hystrix Fallbacks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign-Inheritance-Support"><span class="nav-number">6.</span> <span class="nav-text">Feign Inheritance Support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign-request-response-compression"><span class="nav-number">7.</span> <span class="nav-text">Feign request/response compression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign-logging"><span class="nav-number">8.</span> <span class="nav-text">Feign logging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creating-Feign-Clients-Manually"><span class="nav-number">9.</span> <span class="nav-text">Creating Feign Clients Manually</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">10.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Asher</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
