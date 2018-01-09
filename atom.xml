@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-01-09T06:19:24.663Z</updated>
+  <updated>2018-01-09T07:56:39.363Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MongoDB 安装及使用 - Mac</title>
+    <link href="http://ashman.top/2018/01/09/mongodb/install-mongodb-mac/"/>
+    <id>http://ashman.top/2018/01/09/mongodb/install-mongodb-mac/</id>
+    <published>2018-01-09T07:56:10.000Z</published>
+    <updated>2018-01-09T07:56:39.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 Mac 上安装及使用 MongoDB</p><a id="more"></a><h2 id="安装-启动-停止-卸载"><a href="#安装-启动-停止-卸载" class="headerlink" title="安装/启动/停止/卸载"></a>安装/启动/停止/卸载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ brew install mongodb</span><br><span class="line">$ brew services start mongodb</span><br><span class="line">$ brew services stop mongodb</span><br><span class="line">$ brew uninstal mongodb</span><br></pre></td></tr></table></figure><h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><ul><li>文件路径 <code>/usr/local/etc/mongod.conf</code></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  path: /usr/local/var/log/mongodb/mongo.log</span><br><span class="line">  logAppend: true</span><br><span class="line">storage:</span><br><span class="line">  dbPath: /usr/local/var/mongodb</span><br><span class="line">net:</span><br><span class="line">  bindIp: 127.0.0.1</span><br></pre></td></tr></table></figure><h2 id="To-be-continue-…"><a href="#To-be-continue-…" class="headerlink" title="To be continue …"></a>To be continue …</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 Mac 上安装及使用 MongoDB&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="http://ashman.top/categories/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="http://ashman.top/tags/MongoDB/"/>
+    
+      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>Vim 命令</title>
