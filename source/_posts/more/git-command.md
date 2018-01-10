@@ -1,7 +1,7 @@
 ---
 title: Git 命令
 date: 2017-12-11 10:31:12
-categories: "Git"
+categories: "更多"
 tags:
     - Git
 keywords: Git
