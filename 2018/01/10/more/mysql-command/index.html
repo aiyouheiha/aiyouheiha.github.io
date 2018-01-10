@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="设计模式, 命令模式, Java" />
+  <meta name="keywords" content="MySQL" />
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="keywords" content="设计模式, 命令模式, Java">
+<meta name="description" content="这里会简单介绍 MySQL 操作命令（持续更新……）">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式 - 命令模式">
-<meta property="og:url" content="http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/index.html">
+<meta property="og:title" content="MySQL 命令">
+<meta property="og:url" content="http://ashman.top/2018/01/10/more/mysql-command/index.html">
 <meta property="og:site_name" content="Singo &amp; Asher">
+<meta property="og:description" content="这里会简单介绍 MySQL 操作命令（持续更新……）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/command-pattern-uml.png">
-<meta property="og:updated_time" content="2017-11-12T09:52:52.000Z">
+<meta property="og:updated_time" content="2018-01-10T04:28:13.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式 - 命令模式">
-<meta name="twitter:image" content="http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/command-pattern-uml.png">
+<meta name="twitter:title" content="MySQL 命令">
+<meta name="twitter:description" content="这里会简单介绍 MySQL 操作命令（持续更新……）">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/"/>
+  <link rel="canonical" href="http://ashman.top/2018/01/10/more/mysql-command/"/>
 
 
 
 
 
-  <title>设计模式 - 命令模式 | Singo & Asher</title>
+  <title>MySQL 命令 | Singo & Asher</title>
   
 
 
@@ -273,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/">
+    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/01/10/more/mysql-command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Asher">
@@ -290,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式 - 命令模式</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL 命令</h1>
         
 
         <div class="post-meta">
@@ -302,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T18:11:52+08:00">
-                2017-11-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T10:33:01+08:00">
+                2018-01-10
               </time>
             
 
@@ -325,8 +326,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/更多/" itemprop="url" rel="index">
+                    <span itemprop="name">更多</span>
                   </a>
                 </span>
 
@@ -356,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  43
+                  248
                 </span>
               
 
@@ -393,11 +394,20 @@
       
 
       
-        <p><img src="/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/command-pattern-uml.png" alt="Command Pattern UML"></p>
+        <p>这里会简单介绍 MySQL 操作命令（持续更新……）</p>
 <a id="more"></a>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="多级撤销"><a href="#多级撤销" class="headerlink" title="多级撤销"></a>多级撤销</h3><h3 id="原子事务行为"><a href="#原子事务行为" class="headerlink" title="原子事务行为"></a>原子事务行为</h3><h3 id="状态条"><a href="#状态条" class="headerlink" title="状态条"></a>状态条</h3><h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h3><h3 id="GUI按钮与菜单条"><a href="#GUI按钮与菜单条" class="headerlink" title="GUI按钮与菜单条"></a>GUI按钮与菜单条</h3><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://en.wikipedia.org/wiki/Command_pattern" target="_blank" rel="noopener">Command pattern</a></li>
-<li><a href="http://blog.csdn.net/zdsicecoco/article/details/51332440" target="_blank" rel="noopener">命令模式应用场景</a></li>
+<h2 id="库操作"><a href="#库操作" class="headerlink" title="库操作"></a>库操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br><span class="line">create database db_name;</span><br><span class="line">use db_name;</span><br><span class="line">drop database db_name;</span><br></pre></td></tr></table></figure>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="列出表"><a href="#列出表" class="headerlink" title="列出表"></a>列出表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+<h3 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `tb_name` (</span><br><span class="line">  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;Primary Key&apos;,</span><br><span class="line">  `name` varchar(30) NOT NULL COMMENT &apos;Name&apos;,</span><br><span class="line">  `description` varchar(30) DEFAULT NULL COMMENT &apos;Description&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<h3 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe tb_name;</span><br></pre></td></tr></table></figure>
+<h2 id="用户操作"><a href="#用户操作" class="headerlink" title="用户操作"></a>用户操作</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure>
+<p>e.g.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;test&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select Host, User from mysql.user;</span><br><span class="line">+-----------+---------------+</span><br><span class="line">| Host      | User          |</span><br><span class="line">+-----------+---------------+</span><br><span class="line">| %         | test          |</span><br><span class="line">| localhost | mysql.session |</span><br><span class="line">| localhost | mysql.sys     |</span><br><span class="line">| localhost | root          |</span><br><span class="line">+-----------+---------------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h3 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRANT INSERT, DELETE, UPDATE, SELECT ON db_name.tb_name TO &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">GRANT INSERT, DELETE, UPDATE, SELECT ON db_name.* TO &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">GRANT ALL ON db_name.* TO &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="取消授权"><a href="#取消授权" class="headerlink" title="取消授权"></a>取消授权</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE ALL ON db_name.* FROM &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">REVOKE INSERT, DELETE, UPDATE, SELECT ON db_name.tb_name FROM &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://blog.csdn.net/liuxiao723846/article/details/49583827" target="_blank" rel="noopener">MySQL 用户表中多个 Host 时的匹配规则</a></li>
+<li><a href="https://www.jianshu.com/p/d7b9c468f20d" target="_blank" rel="noopener">MySQL 创建用户与授权</a></li>
 </ul>
 
       
@@ -416,9 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           
         </div>
       
@@ -431,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/06/mongodb/mongodb-command/" rel="next" title="MongoDB 命令">
-                <i class="fa fa-chevron-left"></i> MongoDB 命令
+              <a href="/2018/01/09/mongodb/install-mongodb-mac/" rel="next" title="MongoDB 安装及使用 - Mac">
+                <i class="fa fa-chevron-left"></i> MongoDB 安装及使用 - Mac
               </a>
             
           </div>
@@ -440,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/" rel="prev" title="Spring Cloud Ribbon 简介">
-                Spring Cloud Ribbon 简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +617,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.</span> <span class="nav-text">应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多级撤销"><span class="nav-number">1.1.</span> <span class="nav-text">多级撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原子事务行为"><span class="nav-number">1.2.</span> <span class="nav-text">原子事务行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态条"><span class="nav-number">1.3.</span> <span class="nav-text">状态条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导航"><span class="nav-number">1.4.</span> <span class="nav-text">导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI按钮与菜单条"><span class="nav-number">1.5.</span> <span class="nav-text">GUI按钮与菜单条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程池"><span class="nav-number">1.6.</span> <span class="nav-text">线程池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#库操作"><span class="nav-number">1.</span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">2.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列出表"><span class="nav-number">2.1.</span> <span class="nav-text">列出表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建表"><span class="nav-number">2.2.</span> <span class="nav-text">新建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表结构"><span class="nav-number">2.3.</span> <span class="nav-text">表结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户操作"><span class="nav-number">3.</span> <span class="nav-text">用户操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建用户"><span class="nav-number">3.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户授权"><span class="nav-number">3.2.</span> <span class="nav-text">用户授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取消授权"><span class="nav-number">3.3.</span> <span class="nav-text">取消授权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
