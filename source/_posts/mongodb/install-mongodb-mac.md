@@ -5,7 +5,7 @@ categories: "MongoDB"
 tags:
     - MongoDB
     - Mac
-keywords: CentOS, Mac
+keywords: MongoDB, Mac
 ---
 
 在 Mac 上安装及使用 MongoDB
