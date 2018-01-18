@@ -11,42 +11,10 @@ keywords: Git
 
 <!-- more -->
 
-# tag
+## git tag
 
 ```
-git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] <tagname> [<head>]
-git tag -d <tagname>...
-git tag -l [-n[<num>]] [--contains <commit>] [--no-contains <commit>] [--points-at <object>] [--format=<format>] [--[no-]merged [<commit>]] [<pattern>...]
-git tag -v [--format=<format>] <tagname>...
-
-    -l, --list            list tag names
-    -n[<n>]               print <n> lines of each tag message
-    -d, --delete          delete tags
-    -v, --verify          verify tags
-
-Tag creation options
-    -a, --annotate        annotated tag, needs a message
-    -m, --message <message>
-                          tag message
-    -F, --file <file>     read message from file
-    -s, --sign            annotated and GPG-signed tag
-    --cleanup <mode>      how to strip spaces and #comments from message
-    -u, --local-user <key-id>
-                          use another key to sign the tag
-    -f, --force           replace the tag if exists
-    --create-reflog       create a reflog
-
-Tag listing options
-    --column[=<style>]    show tag list in columns
-    --contains <commit>   print only tags that contain the commit
-    --no-contains <commit>
-                          print only tags that don't contain the commit
-    --merged <commit>     print only tags that are merged
-    --no-merged <commit>  print only tags that are not merged
-    --sort <key>          field name to sort on
-    --points-at <object>  print only tags of the object
-    --format <format>     format to use for the output
-    -i, --ignore-case     sorting and filtering are case insensitive
+$ git tag -h
 ```
 
 ### 新建标签
@@ -114,4 +82,32 @@ $ git push origin v0.0.1
 
 ```
 $ git push origin --tags
+```
+
+## git commit
+
+```
+$ git commit -h
+```
+
+### amend previous commit
+
+```
+$ git commit --amend -h
+```
+
+#### 修改上一次提交的 Author 信息
+
+```
+git commit --amend --author='Name <email>'
+```
+
+符合以上命令格式即可，例如，直接输入上面的命令时
+
+```
+$ git log
+
+commit f2928cb0b6bc9d29e533110ad381bd28d9413d8d (HEAD -> master)
+Author: Name <email>
+Date:   Thu Jan 18 09:54:50 2018 +0800
 ```
