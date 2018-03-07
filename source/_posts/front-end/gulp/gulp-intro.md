@@ -147,5 +147,25 @@ gulp.task('default', function () {
 });
 ```
 
+`gulp-load-plugins` and `gulp.run() has been deprecated.`
+
+```
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+
+const plugins = gulpLoadPlugins();
+
+gulp.task('style', function () {
+   return gulp.src('./app/style/**/*.scss')
+       .pipe(plugins.sass())
+       .pipe(plugins.concat('core.min.css'))
+       .pipe(plugins.minifyCss())
+       .pipe(gulp.dest('./dest/style'));
+});
+
+gulp.task('default', ['style'], function () {
+   gulp.watch('./app/style/**/*.scss', ['style']);
+});```
+
 
 
