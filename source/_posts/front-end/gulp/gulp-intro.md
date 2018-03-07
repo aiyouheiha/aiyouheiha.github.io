@@ -120,4 +120,32 @@ Default
 [17:14:35] Finished 'default' after 120 μs
 ```
 
+## 应用
+
+```
+const gulp = require('gulp');
+// scss to css
+const gulpSass = require('gulp-sass');
+// concat files
+const gulpConcat = require('gulp-concat');
+// minify css
+const gulpMinifyCss = require('gulp-minify-css');
+
+gulp.task('style', function () {
+   return gulp.src('./app/style/**/*.scss')
+       .pipe(gulpSass())
+       .pipe(gulpConcat('core.min.css'))
+       .pipe(gulpMinifyCss())
+       .pipe(gulp.dest('./dest/style'));
+});
+
+gulp.task('default', function () {
+   console.log('Default Task Run ...');
+   gulp.run('style');
+   // Watch directory setting, after changed, then run task 'style'
+   gulp.watch('./app/style/**/*.scss', ['style']);
+});
+```
+
+
 
