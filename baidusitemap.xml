@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://ashman.top/2017/12/14/front-end/gulp/gulp-intro/</loc>
-    <lastmod>2018-03-07T06:33:37.863Z</lastmod>
+    <lastmod>2018-03-07T07:19:47.667Z</lastmod>
     <data>
         <display>
         <title>gulp 使用介绍</title>
@@ -316,28 +316,6 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式 - 访问者模式</title>
-        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ashman.top/2017/11/12/hello-world/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
@@ -368,6 +346,28 @@
            
              
               <breadCrumb title="MongoDB" url="http://ashman.top/categories/MongoDB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式 - 访问者模式</title>
+        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
