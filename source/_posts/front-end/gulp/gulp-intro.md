@@ -165,7 +165,48 @@ gulp.task('style', function () {
 
 gulp.task('default', ['style'], function () {
    gulp.watch('./app/style/**/*.scss', ['style']);
-});```
+});
+```
 
+`browser-sync`
+
+```
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+const browserSync = require('browser-sync').create();
+
+const plugins = gulpLoadPlugins();
+
+gulp.task('style', function () {
+   return gulp.src('./app/style/**/*.scss')
+       .pipe(plugins.sass())
+       .pipe(plugins.concat('core.min.css'))
+       .pipe(plugins.minifyCss())
+       .pipe(gulp.dest('./dest/style'));
+});
+
+gulp.task('html', function () {
+    return gulp.src('./app/html/**/*.html')
+        .pipe(gulp.dest('./dest/html'));
+});
+
+// 静态服务器
+gulp.task('browser-sync', function() {
+    // browser-sync watch 改变后自动刷新页面
+    const files = ['./dest/style/**/*.scss', './dest/html/**/*.html']
+    browserSync.init(files, {
+        server: {
+            // 打开该目录下的 index.html
+            baseDir: "./dest/html"
+        }
+    });
+});
+
+gulp.task('default', ['style', 'html', 'browser-sync'], function () {
+    // gulp watch 改变后执行对应任务，构建项目
+    gulp.watch('./app/style/**/*.scss', ['style']);
+    gulp.watch('./app/html/**/*.html', ['html']);
+});
+```
 
 
