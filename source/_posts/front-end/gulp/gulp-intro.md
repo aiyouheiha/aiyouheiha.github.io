@@ -196,7 +196,7 @@ gulp.task('browser-sync', function() {
     const files = ['./dest/style/**/*.scss', './dest/html/**/*.html'];
     browserSync.init(files, {
         server: {
-            // 打开该目录下的 index.html
+            // 默认打开该目录下的 index.html 访问具体文件 http://localhost:3000/index.html
             baseDir: "./dest/html"
         }
     });
