@@ -193,7 +193,7 @@ gulp.task('html', function () {
 // 静态服务器
 gulp.task('browser-sync', function() {
     // browser-sync watch 改变后自动刷新页面
-    const files = ['./dest/style/**/*.scss', './dest/html/**/*.html']
+    const files = ['./dest/style/**/*.scss', './dest/html/**/*.html'];
     browserSync.init(files, {
         server: {
             // 打开该目录下的 index.html
