@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://ashman.top/2017/12/11/more/git-command/</loc>
+    <lastmod>2018-04-19T09:54:07.225Z</lastmod>
+    <data>
+        <display>
+        <title>Git 命令</title>
+        <pubTime>2017-12-11T02:31:12.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2018/04/19/linux/rpm/</loc>
     <lastmod>2018-04-19T08:55:19.103Z</lastmod>
     <data>
@@ -74,26 +94,6 @@
         <pubTime>2018-01-09T06:03:27.000Z</pubTime>
         
         <tag>Vim</tag>
-         
-         
-           
-             
-              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2017/12/11/more/git-command/</loc>
-    <lastmod>2018-01-19T08:01:51.909Z</lastmod>
-    <data>
-        <display>
-        <title>Git 命令</title>
-        <pubTime>2017-12-11T02:31:12.000Z</pubTime>
-        
-        <tag>Git</tag>
          
          
            
@@ -356,6 +356,21 @@
 
     
   <url>
+    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
@@ -394,21 +409,6 @@
              
               <breadCrumb title="MongoDB" url="http://ashman.top/categories/MongoDB/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
