@@ -9,7 +9,7 @@ keywords: Linux
 
 ## 安装
 
-> rpm -ivh <xxx.rpm>
+> `rpm -ivh <xxx.rpm>`
 
 ```
 $ sudo rpm -ivh jdk-8u162-linux-x64.rpm
