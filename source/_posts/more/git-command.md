@@ -111,3 +111,18 @@ commit f2928cb0b6bc9d29e533110ad381bd28d9413d8d (HEAD -> master)
 Author: Name <email>
 Date:   Thu Jan 18 09:54:50 2018 +0800
 ```
+
+## fatal
+
+### fatal: refusing to merge unrelated histories
+
+- 创建本地仓库
+- 创建远程仓库，并自动生成了一些文件
+- 需要关联本地和远程仓库，此时无法直接 push
+- 首先执行 pull 但是会出现以上报错，添加 `--allow-unrelated-histories` 解决
+
+```
+git pull origin master --allow-unrelated-histories
+```
+
+
