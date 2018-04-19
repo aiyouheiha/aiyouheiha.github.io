@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="通过 sudo 以 root 用户身份执行命令  切换到 root 用户，执行 visudo 打开配置文件 12$ su root# visudo 找到配置文件中的 root    ALL=(ALL)       ALL 在其后新增一行 1username    ALL=(ALL)       ALL 保存后，对应用户便可以使用 sudo 以 root 用户的身份执行命令 此时，执行命令需要输入">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-19T08:31:29.438Z">
+<meta property="og:updated_time" content="2018-04-19T08:34:41.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Add User into sudoers">
 <meta name="twitter:description" content="通过 sudo 以 root 用户身份执行命令  切换到 root 用户，执行 visudo 打开配置文件 12$ su root# visudo 找到配置文件中的 root    ALL=(ALL)       ALL 在其后新增一行 1username    ALL=(ALL)       ALL 保存后，对应用户便可以使用 sudo 以 root 用户的身份执行命令 此时，执行命令需要输入">
@@ -393,7 +393,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username    ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure>
 <p>保存后，对应用户便可以使用 sudo 以 root 用户的身份执行命令</p>
 <p>此时，执行命令需要输入当前用户的密码，若要免密，修改配置如下即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx  ALL=(ALL)       NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username  ALL=(ALL)       NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
 
       
     </div>

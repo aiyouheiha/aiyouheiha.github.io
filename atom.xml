@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-04-19T08:31:29.438Z</updated>
+  <updated>2018-04-19T08:34:41.987Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://ashman.top/2018/04/19/linux/sudoers/"/>
     <id>http://ashman.top/2018/04/19/linux/sudoers/</id>
     <published>2018-04-19T06:51:44.000Z</published>
-    <updated>2018-04-19T08:31:29.438Z</updated>
+    <updated>2018-04-19T08:34:41.987Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>通过 <code>sudo</code> 以 root 用户身份执行命令</p></blockquote><p>切换到 root 用户，执行 visudo 打开配置文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su root</span><br><span class="line"># visudo</span><br></pre></td></tr></table></figure><p>找到配置文件中的 <code>root    ALL=(ALL)       ALL</code> 在其后新增一行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username    ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure><p>保存后，对应用户便可以使用 sudo 以 root 用户的身份执行命令</p><p>此时，执行命令需要输入当前用户的密码，若要免密，修改配置如下即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx  ALL=(ALL)       NOPASSWD:ALL</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>通过 <code>sudo</code> 以 root 用户身份执行命令</p></blockquote><p>切换到 root 用户，执行 visudo 打开配置文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su root</span><br><span class="line"># visudo</span><br></pre></td></tr></table></figure><p>找到配置文件中的 <code>root    ALL=(ALL)       ALL</code> 在其后新增一行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username    ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure><p>保存后，对应用户便可以使用 sudo 以 root 用户的身份执行命令</p><p>此时，执行命令需要输入当前用户的密码，若要免密，修改配置如下即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username  ALL=(ALL)       NOPASSWD:ALL</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
