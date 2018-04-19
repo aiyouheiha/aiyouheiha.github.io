@@ -27,7 +27,7 @@ username    ALL=(ALL)       ALL
 此时，执行命令需要输入当前用户的密码，若要免密，修改配置如下即可
 
 ```
-xxx  ALL=(ALL)       NOPASSWD:ALL
+username  ALL=(ALL)       NOPASSWD:ALL
 ```
 
 
