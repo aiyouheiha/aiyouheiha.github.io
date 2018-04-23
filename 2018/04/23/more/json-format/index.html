@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="@JsonInclude(JsonInclude.Include.NON_NULL) Value that indicates that only properties with non-null values are to be included.  12345678910111213141516171819/** * @author singoasher * @date 2018/4/23 *">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-23T05:22:29.057Z">
+<meta property="og:updated_time" content="2018-04-23T07:23:46.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON Format">
 <meta name="twitter:description" content="@JsonInclude(JsonInclude.Include.NON_NULL) Value that indicates that only properties with non-null values are to be included.  12345678910111213141516171819/** * @author singoasher * @date 2018/4/23 *">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  127
+                  160
                 </span>
               
 
@@ -392,6 +392,12 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"accessToken"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"deviceId"</span>: <span class="string">"34234"</span>,</span><br><span class="line">    <span class="attr">"deviceType"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"attribute"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"value"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"errorCode"</span>: <span class="string">"DEVICE_IS_NOT_EXIST"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"device is not exist"</span>,</span><br><span class="line">    <span class="attr">"extensions"</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>配置后</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"deviceId"</span>: <span class="string">"34234"</span>,</span><br><span class="line">    <span class="attr">"errorCode"</span>: <span class="string">"DEVICE_IS_NOT_EXIST"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"device is not exist"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>备注</strong><ul>
+<li><code>NON_NULL</code> 配置不会级联到子元素，如果未做配置，子元素中的 null 依旧会出现在 JSON 中</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
