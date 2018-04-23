@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-04-19T08:55:19.103Z</updated>
+  <updated>2018-04-23T05:22:29.057Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON Format</title>
+    <link href="http://ashman.top/2018/04/23/more/json-format/"/>
+    <id>http://ashman.top/2018/04/23/more/json-format/</id>
+    <published>2018-04-23T05:16:14.000Z</published>
+    <updated>2018-04-23T05:22:29.057Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JsonInclude-JsonInclude-Include-NON-NULL"><a href="#JsonInclude-JsonInclude-Include-NON-NULL" class="headerlink" title="@JsonInclude(JsonInclude.Include.NON_NULL)"></a><code>@JsonInclude(JsonInclude.Include.NON_NULL)</code></h2><blockquote><p>Value that indicates that only properties with non-null values are to be included.</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> singoasher</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018/4/23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@JsonInclude</span>(JsonInclude.Include.NON_NULL)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Payload</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String accessToken;</span><br><span class="line">    <span class="keyword">private</span> String deviceId;</span><br><span class="line">    <span class="keyword">private</span> String deviceType;</span><br><span class="line">    <span class="keyword">private</span> String attribute;</span><br><span class="line">    <span class="keyword">private</span> String value;</span><br><span class="line">    <span class="keyword">private</span> ErrorCode errorCode;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line">    <span class="keyword">private</span> Extensions extensions;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>配置前</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"accessToken"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"deviceId"</span>: <span class="string">"34234"</span>,</span><br><span class="line">    <span class="attr">"deviceType"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"attribute"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"value"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"errorCode"</span>: <span class="string">"DEVICE_IS_NOT_EXIST"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"device is not exist"</span>,</span><br><span class="line">    <span class="attr">"extensions"</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>配置后</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"deviceId"</span>: <span class="string">"34234"</span>,</span><br><span class="line">    <span class="attr">"errorCode"</span>: <span class="string">"DEVICE_IS_NOT_EXIST"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"device is not exist"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;JsonInclude-JsonInclude-Include-NON-NULL&quot;&gt;&lt;a href=&quot;#JsonInclude-JsonInclude-Include-NON-NULL&quot; class=&quot;headerlink&quot; title=&quot;@JsonInclude
+      
+    
+    </summary>
+    
+      <category term="JSON" scheme="http://ashman.top/categories/JSON/"/>
+    
+    
+      <category term="JSON" scheme="http://ashman.top/tags/JSON/"/>
+    
+  </entry>
   
   <entry>
     <title>rpm</title>
