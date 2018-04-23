@@ -58,3 +58,10 @@ public class Payload {
 }
 ```
 
+- **备注**
+    - `NON_NULL` 配置不会级联到子元素，如果未做配置，子元素中的 null 依旧会出现在 JSON 中
+
+
+
+
+
