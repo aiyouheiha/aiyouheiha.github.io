@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Spring Boot, JPA, Java, @EnableJpaAuditing" />
+  <meta name="keywords" content="Front End, css" />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="通过样例，简单介绍 Spring Data JPA Auditing 功能（基于 Spring Boot）  创建/更新数据的同时，生成数据创建/修改时间 创建/更新数据的同时，生成数据创建/修改人">
-<meta name="keywords" content="Spring Boot, JPA, Java, @EnableJpaAuditing">
+<meta name="description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot">
+<meta name="keywords" content="Front End, css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring Data JPA Auditing">
-<meta property="og:url" content="http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/index.html">
+<meta property="og:title" content="页面布局之堆叠">
+<meta property="og:url" content="http://ashman.top/2018/04/29/front-end/css/页面布局之堆叠/index.html">
 <meta property="og:site_name" content="Singo &amp; Asher">
-<meta property="og:description" content="通过样例，简单介绍 Spring Data JPA Auditing 功能（基于 Spring Boot）  创建/更新数据的同时，生成数据创建/修改时间 创建/更新数据的同时，生成数据创建/修改人">
+<meta property="og:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T15:32:33.836Z">
+<meta property="og:updated_time" content="2018-04-28T20:22:18.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring Data JPA Auditing">
-<meta name="twitter:description" content="通过样例，简单介绍 Spring Data JPA Auditing 功能（基于 Spring Boot）  创建/更新数据的同时，生成数据创建/修改时间 创建/更新数据的同时，生成数据创建/修改人">
+<meta name="twitter:title" content="页面布局之堆叠">
+<meta name="twitter:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/"/>
+  <link rel="canonical" href="http://ashman.top/2018/04/29/front-end/css/页面布局之堆叠/"/>
 
 
 
 
 
-  <title>Spring Data JPA Auditing | Singo & Asher</title>
+  <title>页面布局之堆叠 | Singo & Asher</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/">
+    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/04/29/front-end/css/页面布局之堆叠/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Asher">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring Data JPA Auditing</h1>
+          <h1 class="post-title" itemprop="name headline">页面布局之堆叠</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T14:48:46+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T22:22:22+08:00">
+                2018-04-29
               </time>
             
 
@@ -316,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-Data/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring Data</span>
+                  <a href="/categories/Front-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Front End</span>
                   </a>
                 </span>
 
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  471
+                  522
                 </span>
               
 
@@ -384,38 +384,21 @@
       
 
       
-        <p>通过样例，简单介绍 Spring Data JPA Auditing 功能（基于 Spring Boot）</p>
-<ul>
-<li>创建/更新数据的同时，生成数据创建/修改时间</li>
-<li>创建/更新数据的同时，生成数据创建/修改人</li>
-</ul>
-<a id="more"></a>
-<h2 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h2><p>假设 <code>CurrentUserInfo</code> 类为一个用来获取访问用户信息的类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CurrentUserInfo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getUserName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();</span><br><span class="line">        String userName = request.getHeader(<span class="string">"User-Name"</span>);</span><br><span class="line">        <span class="keyword">return</span> userName == <span class="keyword">null</span> ? <span class="string">""</span> : userName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对应开启 <strong>审计</strong> 功能的配置类，可参考如下代码</p>
-<ul>
-<li><code>@EnableJpaAuditing</code> 用于开启审计功能</li>
-<li><code>auditorAware()</code> 方法用于提供 <code>CurrentAuditor</code>，实现了 <code>AuditorAware</code> 接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.AuditorAware;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.config.EnableJpaAuditing;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableJpaAuditing</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JpaConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> AuditorAware&lt;String&gt; <span class="title">auditorAware</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> CurrentUserInfo::getUserName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>如下 <code>GeneralEntity</code> 是一个提供给实体类继承的，包含公共属性的抽象类</p>
-<ul>
-<li><strong>PS</strong> 公共类 <code>GeneralEntity</code> 只是测试使用，感觉会方便些许，暂不确定后果，慎重使用</li>
-</ul>
-<p>其中</p>
-<ul>
-<li><code>@EntityListeners({AuditingEntityListener.class})</code> <ul>
-<li>用于设定所回调的 <code>EntityListener</code>，通过它来捕获审计信息</li>
-<li>可以认为是在对应 Entity 或 Mapped Superclass 上启用审计功能</li>
-</ul>
-</li>
-<li><code>@CreatedDate</code> 创建时间</li>
-<li><code>@CreatedBy</code> 创建人</li>
-<li><code>@LastModifiedDate</code> 修改时间</li>
-<li><code>@LastModifiedBy</code> 修改人</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.annotation.CreatedBy;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.annotation.CreatedDate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.annotation.LastModifiedBy;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.annotation.LastModifiedDate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.domain.support.AuditingEntityListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@MappedSuperclass</span></span><br><span class="line"><span class="meta">@EntityListeners</span>(&#123;AuditingEntityListener.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GeneralEntity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Temporal</span>(TemporalType.TIMESTAMP)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"create_date"</span>, updatable = <span class="keyword">false</span>)</span><br><span class="line">    <span class="meta">@CreatedDate</span></span><br><span class="line">    <span class="keyword">private</span> Date createDate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"create_by"</span>, updatable = <span class="keyword">false</span>)</span><br><span class="line">    <span class="meta">@CreatedBy</span></span><br><span class="line">    <span class="keyword">private</span> String createdBy;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Temporal</span>(TemporalType.TIMESTAMP)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"last_modified_date"</span>)</span><br><span class="line">    <span class="meta">@LastModifiedDate</span></span><br><span class="line">    <span class="keyword">private</span> Date lastModifiedDate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"last_modified_by"</span>)</span><br><span class="line">    <span class="meta">@LastModifiedBy</span></span><br><span class="line">    <span class="keyword">private</span> String lastModifiedBy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上是在 Mapped Superclass 中使用，在 Entity 中使用并无差别，不做赘述</p>
+        <h2 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;页面布局之堆叠&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">  .header &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .nav &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    z-index: 1;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: grey;</span><br><span class="line">    height: 100px;</span><br><span class="line">    opacity: 0.6;</span><br><span class="line">  &#125;</span><br><span class="line">  .banner &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: red;</span><br><span class="line">    height: 200px;</span><br><span class="line">    opacity: 0.3;</span><br><span class="line">  &#125;</span><br><span class="line">  .content &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    top: 120px;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: green;</span><br><span class="line">    height: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;nav&quot;&gt;This is nav&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;banner&quot;&gt;This is banner&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;content&quot;&gt;This is content&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由此向下，内容多为瞎掰，酌情～</p>
+<p>由此向下，内容多为瞎掰，酌情～</p>
+<p>由此向下，内容多为瞎掰，酌情～</p>
+<p>说三遍～</p>
+<hr>
+<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><p>设置元素的堆叠顺序，数值越大，元素距离用户越近</p>
+<h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><p>注意 relative 与 absolute 的使用。</p>
+<p>HTML 布局大致可以认为是各个元素按照代码顺序，依次布局。</p>
+<p>将某个元素样式设置为 absolute 后，相当于将该元素从这个排序中拿出。<br>后续元素会跟上，填充空白位置。</p>
+<p>这就是为什么 content 的样式中有 <code>top: 120px;</code> 的配置，<br>为了不覆盖（或被覆盖）设置为 absolute 的 banner 元素。</p>
+<p>banner 元素 <code>width: 100%;</code> 为什么配置该项，可注释自行查看效果。</p>
+<p>absolute/relative 的绝对/相对位置，是以距离最近的，<br>具有 positon absolute/relative/… （待补充）的父元素为基准的。 </p>
+<p>所以，该元素也可以使用 relative 相对位置，但是，top 就要设定为 -XXXpx；<br>相对而言 absolute 绝对位置 top 设置为 0 要方便一些。</p>
+<p>absolute 相当于拿出元素排列，但是本身位置还是紧跟在之前应该在的地方。</p>
 
       
     </div>
@@ -433,11 +416,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Front-End/" rel="tag"># Front End</a>
           
-            <a href="/tags/Spring-Boot/" rel="tag"># Spring Boot</a>
-          
-            <a href="/tags/JPA/" rel="tag"># JPA</a>
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -450,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/26/front-end/css/页面布局之居中/" rel="next" title="页面布局之居中">
+                <i class="fa fa-chevron-left"></i> 页面布局之居中
               </a>
             
           </div>
@@ -459,10 +440,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/14/java/equals-or-not/" rel="prev" title="Equals or Not">
-                Equals or Not <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +609,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启"><span class="nav-number">1.</span> <span class="nav-text">开启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栗子"><span class="nav-number">1.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-index"><span class="nav-number">3.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position"><span class="nav-number">4.</span> <span class="nav-text">position</span></a></li></ol></div>
             
 
           </div>

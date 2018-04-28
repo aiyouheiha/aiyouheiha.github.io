@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-04-26T06:57:56.482Z</updated>
+  <updated>2018-04-28T20:22:18.048Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>页面布局之堆叠</title>
+    <link href="http://ashman.top/2018/04/29/front-end/css/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E4%B9%8B%E5%A0%86%E5%8F%A0/"/>
+    <id>http://ashman.top/2018/04/29/front-end/css/页面布局之堆叠/</id>
+    <published>2018-04-29T14:22:22.000Z</published>
+    <updated>2018-04-28T20:22:18.048Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;页面布局之堆叠&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">  .header &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .nav &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    z-index: 1;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: grey;</span><br><span class="line">    height: 100px;</span><br><span class="line">    opacity: 0.6;</span><br><span class="line">  &#125;</span><br><span class="line">  .banner &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: red;</span><br><span class="line">    height: 200px;</span><br><span class="line">    opacity: 0.3;</span><br><span class="line">  &#125;</span><br><span class="line">  .content &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    top: 120px;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: green;</span><br><span class="line">    height: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;nav&quot;&gt;This is nav&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;banner&quot;&gt;This is banner&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;content&quot;&gt;This is content&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由此向下，内容多为瞎掰，酌情～</p><p>由此向下，内容多为瞎掰，酌情～</p><p>由此向下，内容多为瞎掰，酌情～</p><p>说三遍～</p><hr><h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><p>设置元素的堆叠顺序，数值越大，元素距离用户越近</p><h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><p>注意 relative 与 absolute 的使用。</p><p>HTML 布局大致可以认为是各个元素按照代码顺序，依次布局。</p><p>将某个元素样式设置为 absolute 后，相当于将该元素从这个排序中拿出。<br>后续元素会跟上，填充空白位置。</p><p>这就是为什么 content 的样式中有 <code>top: 120px;</code> 的配置，<br>为了不覆盖（或被覆盖）设置为 absolute 的 banner 元素。</p><p>banner 元素 <code>width: 100%;</code> 为什么配置该项，可注释自行查看效果。</p><p>absolute/relative 的绝对/相对位置，是以距离最近的，<br>具有 positon absolute/relative/… （待补充）的父元素为基准的。 </p><p>所以，该元素也可以使用 relative 相对位置，但是，top 就要设定为 -XXXpx；<br>相对而言 absolute 绝对位置 top 设置为 0 要方便一些。</p><p>absolute 相当于拿出元素排列，但是本身位置还是紧跟在之前应该在的地方。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;栗子&quot;&gt;&lt;a href=&quot;#栗子&quot; class=&quot;headerlink&quot; title=&quot;栗子&quot;&gt;&lt;/a&gt;栗子&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="Front End" scheme="http://ashman.top/categories/Front-End/"/>
+    
+    
+      <category term="Front End" scheme="http://ashman.top/tags/Front-End/"/>
+    
+      <category term="css" scheme="http://ashman.top/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>页面布局之居中</title>
@@ -170,11 +197,11 @@
       <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
     
     
-      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
-    
       <category term="Redis" scheme="http://ashman.top/tags/Redis/"/>
     
       <category term="Cluster" scheme="http://ashman.top/tags/Cluster/"/>
+    
+      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
     
   </entry>
   
@@ -507,28 +534,6 @@
       <category term="Java" scheme="http://ashman.top/tags/Java/"/>
     
       <category term="设计模式" scheme="http://ashman.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB 命令</title>
-    <link href="http://ashman.top/2017/11/06/mongodb/mongodb-command/"/>
-    <id>http://ashman.top/2017/11/06/mongodb/mongodb-command/</id>
-    <published>2017-11-06T07:59:17.000Z</published>
-    <updated>2017-12-21T01:44:49.814Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里会简单介绍 MongoDB 操作命令（持续更新……）</p><a id="more"></a><h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo x.x.x.x:27017/target</span><br></pre></td></tr></table></figure><h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.version()</span><br></pre></td></tr></table></figure><h2 id="数据库列表"><a href="#数据库列表" class="headerlink" title="数据库列表"></a>数据库列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure><h2 id="当前位置"><a href="#当前位置" class="headerlink" title="当前位置"></a>当前位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db</span><br></pre></td></tr></table></figure><h2 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show users</span><br><span class="line">db.system.users.find()</span><br></pre></td></tr></table></figure><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:&quot;root&quot;,pwd:&quot;123456&quot;,roles:[&quot;root&quot;]&#125;)</span><br><span class="line">db.createUser(</span><br><span class="line">    &#123;</span><br><span class="line">        user: &quot;admin&quot;, </span><br><span class="line">        customData: &#123;</span><br><span class="line">            description: &quot;superuser&quot;</span><br><span class="line">        &#125;, </span><br><span class="line">        pwd: &quot;123456&quot;, </span><br><span class="line">        roles: [</span><br><span class="line">            &#123;</span><br><span class="line">                role: &quot;userAdminAnyDatabase&quot;, </span><br><span class="line">                db: &quot;admin&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="查询文档"><a href="#查询文档" class="headerlink" title="查询文档"></a>查询文档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&apos;test&apos;).find(&#123;&#125;)</span><br><span class="line">db.getCollection(&apos;test&apos;).find(</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;id&quot;: &quot;xxx&quot;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&apos;test&apos;).insert(</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;id&quot;: &quot;yyy&quot;, </span><br><span class="line">        &quot;isTest&quot;: false, </span><br><span class="line">        &quot;test&quot;: &#123;</span><br><span class="line">            &quot;id&quot;: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="更新文档"><a href="#更新文档" class="headerlink" title="更新文档"></a>更新文档</h2><p>文档中对象结构如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;_id&quot; : ObjectId(&quot;59fc4cb94422cb484447463f&quot;),</span><br><span class="line">    &quot;id&quot; : &quot;yyy&quot;,</span><br><span class="line">    &quot;isTest&quot; : false,</span><br><span class="line">    &quot;test&quot; : &#123;</span><br><span class="line">        &quot;id&quot; : 1.0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>更新</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&apos;test&apos;).update(</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;id&quot;: &quot;yyy&quot;</span><br><span class="line">    &#125;, </span><br><span class="line">    &#123;</span><br><span class="line">        $set: &#123;</span><br><span class="line">            &quot;isTest&quot;: true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>更新内层属性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&apos;test&apos;).update(</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;id&quot;: &quot;yyy&quot;</span><br><span class="line">    &#125;, </span><br><span class="line">    &#123;</span><br><span class="line">        $set: &#123;</span><br><span class="line">            &quot;test.id&quot;: 3</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&apos;test&apos;).remove(&#123;&quot;id&quot;: &quot;yyy&quot;&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里会简单介绍 MongoDB 操作命令（持续更新……）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="MongoDB" scheme="http://ashman.top/categories/MongoDB/"/>
-    
-    
-      <category term="MongoDB" scheme="http://ashman.top/tags/MongoDB/"/>
     
   </entry>
   
