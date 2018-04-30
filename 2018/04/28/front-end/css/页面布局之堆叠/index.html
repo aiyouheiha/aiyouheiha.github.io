@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-29T03:55:46.449Z">
+<meta property="og:updated_time" content="2018-04-30T01:33:11.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="页面布局之堆叠">
 <meta name="twitter:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  855
+                  903
                 </span>
               
 
@@ -424,6 +424,8 @@
 <p>嗯，这样来看，在需要堆叠的元素里，选择“占地面积”最大的，在最前面 relative，<br>后续待堆叠元素设置为 absolute 是个可以考虑的使用方式。</p>
 <p>不过，使用 absolute 时，width 设置比较麻烦，所以还是根据具体需求去设置啦～</p>
 <p>最后，也不要忘记还有 fixed 可以使用哈～以上～</p>
+<h3 id="关于-width"><a href="#关于-width" class="headerlink" title="关于 width"></a>关于 width</h3><p>相对于配置 <code>width: 100%</code>，使用如下方式（感觉）是个更好的选择，left 以及 right 限制宽度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -638,7 +640,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栗子"><span class="nav-number">1.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-index"><span class="nav-number">2.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position"><span class="nav-number">3.</span> <span class="nav-text">position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">3.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#absolute"><span class="nav-number">3.2.</span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fixed"><span class="nav-number">3.3.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relative"><span class="nav-number">3.4.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inherit"><span class="nav-number">3.5.</span> <span class="nav-text">inherit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瞎掰"><span class="nav-number">4.</span> <span class="nav-text">瞎掰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-absolute"><span class="nav-number">4.1.</span> <span class="nav-text">关于 absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-nav-使用-absolute-relative-fixed-…"><span class="nav-number">4.2.</span> <span class="nav-text">关于 nav 使用 absolute/relative/fixed/…</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栗子"><span class="nav-number">1.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-index"><span class="nav-number">2.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position"><span class="nav-number">3.</span> <span class="nav-text">position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">3.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#absolute"><span class="nav-number">3.2.</span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fixed"><span class="nav-number">3.3.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relative"><span class="nav-number">3.4.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inherit"><span class="nav-number">3.5.</span> <span class="nav-text">inherit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瞎掰"><span class="nav-number">4.</span> <span class="nav-text">瞎掰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-absolute"><span class="nav-number">4.1.</span> <span class="nav-text">关于 absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-nav-使用-absolute-relative-fixed-…"><span class="nav-number">4.2.</span> <span class="nav-text">关于 nav 使用 absolute/relative/fixed/…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-width"><span class="nav-number">4.3.</span> <span class="nav-text">关于 width</span></a></li></ol></li></ol></div>
             
 
           </div>
