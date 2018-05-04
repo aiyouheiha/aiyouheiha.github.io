@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="说明：  作为入门，初始操作均在 root 用户下进行，也即未考虑安全问题。   nginx 安装与使用系统信息12# uname -aLinux VM_0_4_centos 3.10.0-514.26.2.el7.x86_64 #1 SMP Tue Jul 4 15:04:05 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux 安装123456# yum insta">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-04T05:16:15.720Z">
+<meta property="og:updated_time" content="2018-05-04T05:58:41.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx 初识">
 <meta name="twitter:description" content="说明：  作为入门，初始操作均在 root 用户下进行，也即未考虑安全问题。   nginx 安装与使用系统信息12# uname -aLinux VM_0_4_centos 3.10.0-514.26.2.el7.x86_64 #1 SMP Tue Jul 4 15:04:05 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux 安装123456# yum insta">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  662
+                  775
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -416,8 +416,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ps aux | grep nginx</span><br><span class="line">root      5356  0.0  0.2 124236  5392 ?        Ss   10:26   0:00 nginx: master process nginx</span><br><span class="line">nginx     6145  0.0  0.2 126324  4444 ?        S    10:41   0:00 nginx: worker process</span><br></pre></td></tr></table></figure>
 <p>而自定义路径 <code>/home/test/static</code> 中的 test 目录，是用户 test 的用户目录，其访问权限如下，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drwx------ 3 root  root  4096 5月   4 10:42 test</span><br></pre></td></tr></table></figure>
-<p>其他用户（当前指 nginx 用户）是不具备该目录的访问权限的，<br>为该目录配置其他用户的 <strong>执行权限（执行 index.html）</strong> 即可顺利访问。</p>
+<p>其他用户（当前指 nginx 用户）是不具备该目录的访问权限的。</p>
+<p><strong>方案一（推荐）</strong></p>
+<p>http server 的文件一般会归属于一个特定的用户，修改 nginx 配置文件，<br>配置 nginx 工作进程的运行用户为相应用户即可，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># user nginx;</span><br><span class="line">user test;</span><br></pre></td></tr></table></figure>
+<p>保存之后 <code>nginx -s reload</code> 重新加载配置文件，即可顺利访问～</p>
+<p><strong>方案二（不太推荐）</strong></p>
+<p>为该目录配置其他用户的 <strong>执行权限（执行 index.html）</strong> 即可顺利访问。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># chmod +001 test/</span><br><span class="line"># ll</span><br><span class="line">drwx-----x 3 test  test  4096 5月   4 11:30 test</span><br></pre></td></tr></table></figure>
+<p><strong>方案三（大雾）</strong></p>
+<p>将工作进程的运行用户配置为 root （看着就相当不安全哈～）</p>
 
       
     </div>
