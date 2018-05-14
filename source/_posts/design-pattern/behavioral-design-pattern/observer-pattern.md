@@ -8,5 +8,6 @@ tags:
 keywords: 设计模式, 观察者模式, Java, Observer Pattern
 ---
 
+![Observer Pattern UML](observer-pattern/observer-pattern-uml.png)
 
 
