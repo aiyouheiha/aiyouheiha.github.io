@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://ashman.top/2018/05/22/more/favorites/</loc>
-    <lastmod>2018-05-22T10:20:13.733Z</lastmod>
+    <lastmod>2018-05-22T10:31:54.842Z</lastmod>
     <data>
         <display>
         <title>favorites</title>
@@ -283,11 +283,11 @@
         <title>Redis Cluster - Mac</title>
         <pubTime>2018-01-11T08:24:06.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>Redis</tag>
          
         <tag>Cluster</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -384,6 +384,30 @@
 
     
   <url>
+    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
+    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Data JPA Auditing</title>
+        <pubTime>2017-11-13T06:48:46.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Boot</tag>
+         
+        <tag>JPA</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Data" url="http://ashman.top/categories/Spring-Data/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
     <lastmod>2017-11-21T15:32:33.836Z</lastmod>
     <data>
@@ -403,30 +427,6 @@
            
              
               <breadCrumb title="Spring Cloud" url="http://ashman.top/categories/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
-    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Data JPA Auditing</title>
-        <pubTime>2017-11-13T06:48:46.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Boot</tag>
-         
-        <tag>JPA</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Data" url="http://ashman.top/categories/Spring-Data/"/>
           
         </display>
     </data>
