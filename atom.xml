@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-05-14T07:56:32.110Z</updated>
+  <updated>2018-05-22T10:20:13.733Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>favorites</title>
+    <link href="http://ashman.top/2018/05/22/more/favorites/"/>
+    <id>http://ashman.top/2018/05/22/more/favorites/</id>
+    <published>2018-05-22T10:10:32.000Z</published>
+    <updated>2018-05-22T10:20:13.733Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Arrays.asList(&quot;On&quot;, &quot;Off&quot;)</span><br><span class="line">Collections.singletonList(&quot;Set&quot;)</span><br></pre></td></tr></table></figure><h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@JsonInclude(JsonInclude.Include.NON_NULL)</span><br><span class="line">@JsonIgnoreProperties(ignoreUnknown = true)</span><br><span class="line">@JsonProperty(&quot;interface&quot;)</span><br></pre></td></tr></table></figure><h3 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@Builder</span><br><span class="line">@NoArgsConstructor</span><br><span class="line">@AllArgsConstructor</span><br><span class="line">@EqualsAndHashCode(callSuper = true)</span><br><span class="line">@ToString(callSuper = true)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Java&quot;&gt;&lt;a href=&quot;#Java&quot; class=&quot;headerlink&quot; title=&quot;Java&quot;&gt;&lt;/a&gt;Java&lt;/h2&gt;&lt;h3 id=&quot;List&quot;&gt;&lt;a href=&quot;#List&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+    
+    
+      <category term="favorites" scheme="http://ashman.top/tags/favorites/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式 - 观察者模式</title>
@@ -505,27 +531,6 @@
       <category term="Spring Boot" scheme="http://ashman.top/tags/Spring-Boot/"/>
     
       <category term="JPA" scheme="http://ashman.top/tags/JPA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://ashman.top/2017/11/12/hello-world/"/>
-    <id>http://ashman.top/2017/11/12/hello-world/</id>
-    <published>2017-11-12T09:52:52.000Z</published>
-    <updated>2017-11-12T09:52:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
