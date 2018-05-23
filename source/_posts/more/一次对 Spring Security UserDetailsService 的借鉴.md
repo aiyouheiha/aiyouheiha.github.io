@@ -7,13 +7,13 @@ tags:
 keywords: Spring Security
 ---
 
-> org.springframework.security.core.userdetails.UserDetailsService
+> `org.springframework.security.core.userdetails.UserDetailsService`
 
 ## UserDetailsService
 
-```
+```java
 public interface UserDetailsService {
-  UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }
 ```
 
@@ -27,21 +27,21 @@ public interface UserDetailsService {
 
 将获取该数据的实例，以构造参数等形式直接在模块中使用，如
 
-```
-public class ThisModel {
-    private OtherModel otherModel;
+```java
+public class ThisModule {
+    private OtherModule otherModule;
 
-    public ThisModel(OtherModel otherModel) {
-        this.otherModel = otherModel;
+    public ThisModule(OtherModule otherModule) {
+        this.otherModule = otherModule;
     }
 
     public void use() {
-        System.out.println(otherModel.data());
+        System.out.println(otherModule.data());
     }
 }
 ```
 
-- **结果** 造成了不必要的耦合，这个模块如果想要单独提取出来，进行复用，ThisModel 这个类就成了累赘
+- **结果** 造成了不必要的耦合，这个模块如果想要单独提取出来，进行复用，ThisModule 这个类就成了累赘
 
 ### 参考 UserDetailsService 的实现方式
 
@@ -51,8 +51,8 @@ public class ThisModel {
 - 以 @Autowire 等方式，通过 Spring 注入接口实现的 Bean
 - 这样，需要复用这个模块时，新的应用只需要实现这个接口就可以了，当前模块不需要进行改动
 
-```
-public class OtherModel implements ThisModelInterface {
+```java
+public class OtherModule implements ThisModuleInterface {
     @Override
     public String data() {
         return "Data";
