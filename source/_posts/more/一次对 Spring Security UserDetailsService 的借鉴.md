@@ -60,4 +60,6 @@ public class OtherModule implements ThisModuleInterface {
 }
 ```
 
+- **PS** 实现这个接口时，如果还需要用到另外一个独立模块 B 所提供的功能
+    - 同理，注意不要将实现类放在模块 B 中，应该放在应用中的一个公共位置，起到类似适配器的功能
 
