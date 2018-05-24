@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="org.springframework.security.core.userdetails.UserDetailsService  UserDetailsService123public interface UserDetailsService &amp;#123;    UserDetails loadUserByUsername(String username) throws UsernameNot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T09:44:12.016Z">
+<meta property="og:updated_time" content="2018-05-24T07:59:30.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一次对 Spring Security UserDetailsService 的借鉴">
 <meta name="twitter:description" content="org.springframework.security.core.userdetails.UserDetailsService  UserDetailsService123public interface UserDetailsService &amp;#123;    UserDetails loadUserByUsername(String username) throws UsernameNot">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  319
+                  389
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -406,6 +406,12 @@
 <li>这样，需要复用这个模块时，新的应用只需要实现这个接口就可以了，当前模块不需要进行改动</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OtherModule</span> <span class="keyword">implements</span> <span class="title">ThisModuleInterface</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">data</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Data"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>PS</strong> 实现这个接口时，如果还需要用到另外一个独立模块 B 所提供的功能<ul>
+<li>同理，注意不要将实现类放在模块 B 中，应该放在应用中的一个公共位置，起到类似适配器的功能</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
