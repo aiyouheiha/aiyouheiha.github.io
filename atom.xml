@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-05-24T07:59:30.645Z</updated>
+  <updated>2018-05-25T06:57:07.279Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Base64 解码时的填充问题</title>
+    <link href="http://ashman.top/2018/05/25/more/Base64%20%E8%A7%A3%E7%A0%81%E6%97%B6%E7%9A%84%E5%A1%AB%E5%85%85%E9%97%AE%E9%A2%98/"/>
+    <id>http://ashman.top/2018/05/25/more/Base64 解码时的填充问题/</id>
+    <published>2018-05-25T02:15:39.000Z</published>
+    <updated>2018-05-25T06:57:07.279Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>代码内容 From <a href="https://github.com/jwtk/jjwt" target="_blank" rel="noopener">io.jsonwebtoken.impl.Base64UrlCodec</a></p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">char</span>[] ensurePadding(<span class="keyword">char</span>[] chars) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span>[] result = chars; <span class="comment">//assume argument in case no padding is necessary</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> paddingCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//fix for https://github.com/jwtk/jjwt/issues/31</span></span><br><span class="line">    <span class="keyword">int</span> remainder = chars.length % <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">if</span> (remainder == <span class="number">2</span> || remainder == <span class="number">3</span>) &#123;</span><br><span class="line">        paddingCount = <span class="number">4</span> - remainder;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (paddingCount &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        result = <span class="keyword">new</span> <span class="keyword">char</span>[chars.length + paddingCount];</span><br><span class="line">        System.arraycopy(chars, <span class="number">0</span>, result, <span class="number">0</span>, chars.length);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; paddingCount; i++) &#123;</span><br><span class="line">            result[chars.length + i] = <span class="string">'='</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><p>为什么是否需要填充的 if 语句判定条件是 <code>remainder == 2 || remainder == 3</code>，<br>那么 remainder 为 0 或者 1 的时候为什么不需要填充呢？</p><ul><li>首先需要了解 Base64 的原理，可参考以下链接<ul><li><a href="https://segmentfault.com/a/1190000004533485" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004533485</a><ul><li><strong>PS</strong> 评论提到了“为什么一定要补位到 6 和 8 的公倍数”的问题</li><li>给出的答案是为了应对 <strong>Base64 拼接</strong> 的问题</li></ul></li></ul></li></ul><h2 id="不需要填充"><a href="#不需要填充" class="headerlink" title="不需要填充"></a>不需要填充</h2><p>假设原字符串长度为 <code>n</code>，则对应的二进制位长度 <code>8 * n</code>，当该长度是 <code>6</code> 的倍数时，不需要进行填充。</p><p>此时，编码后的二进制位长度应该是 <code>24</code> 的倍数：<code>24, 48, 72 ...</code></p><p>对应字节数则应该是 <code>24 / 6 = 4</code> 的倍数：<code>4, 8, 12 ...</code></p><p><strong>因此，在解码时，如果字节数是 <code>4</code> 的倍数（<code>remainder == 0</code>），不需要进行填充</strong></p><h2 id="需要填充"><a href="#需要填充" class="headerlink" title="需要填充"></a>需要填充</h2><p>对于需要填充的情况，除去完全填充位（不包含任何原二进制位的填充位），其长度是怎样的一种情况呢？</p><p>首先，二进制位总数必然是 <code>8</code> 的倍数，那么，当其除以 <code>6</code> 时，</p><ul><li>要么整除，是 <code>24</code> 的倍数；</li><li>要么会余不超过 6 的二进制位</li></ul><p>又根据余数可乘性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a 与 b 的乘积除以 c 的余数，等于 a, b 分别除以 c 的余数之积（或这个积除以 c 的余数）</span><br></pre></td></tr></table></figure><p>余数应该是 <code>(2 * [0-5]) % 6</code> 也即 <code>0, 2, 4</code>，也即非整除仅有 <code>2, 4</code> 两种情况。</p><p>需要再填充一定的二进制位，使得其能够整除 <code>24</code>，<br>标准便是新增的位数需要能够整除 8 同时可以补足进行 Base64 划分的组（6位一组）</p><ul><li><strong>2</strong> 添加 <code>4 + 6 + 6</code> 新增 16 位便可</li><li><strong>4</strong> 添加 <code>2 + 6</code> 新增 8 位即可</li></ul><p>也就是说，完全填充仅有填充 1 或者填充 2 两种情况；</p><p>这也是为什么判定条件为 <code>remainder == 2 || remainder == 3</code>;</p><p>如果出现 <code>remainder == 1</code> （需要填充 3）这根本不可能是一个合法的 Base64 字符串</p><h2 id="有点绕？"><a href="#有点绕？" class="headerlink" title="有点绕？"></a>有点绕？</h2><p>假设 <code>remainder == 1</code> 也即字节数为 <code>4 * n + 1</code>，对应的二进制位数为 <code>4 * n * 6 + 6</code>；</p><p>由于这是从 8 位字节转化而来的，出现这种形式的待完全填充字节序列，必然要符合如下命题：</p><ul><li><code>4 * n * 6 + [1-6]</code> 能够整除 <code>8</code></li></ul><p>这显然是一个伪命题，得证。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;代码内容 From &lt;a href=&quot;https://github.com/jwtk/jjwt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;io.jsonwebtoken.impl.Base64UrlCodec&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+    
+    
+      <category term="Base64" scheme="http://ashman.top/tags/Base64/"/>
+    
+  </entry>
   
   <entry>
     <title>一次对 Spring Security UserDetailsService 的借鉴</title>
@@ -507,28 +534,6 @@
       <category term="Swagger" scheme="http://ashman.top/tags/Swagger/"/>
     
       <category term="RESTful API" scheme="http://ashman.top/tags/RESTful-API/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Equals or Not</title>
-    <link href="http://ashman.top/2017/11/14/java/equals-or-not/"/>
-    <id>http://ashman.top/2017/11/14/java/equals-or-not/</id>
-    <published>2017-11-14T07:24:20.000Z</published>
-    <updated>2017-11-21T15:32:33.835Z</updated>
-    
-    <content type="html"><![CDATA[<p>简单介绍一些帮助判断 equals 的方法</p><a id="more"></a><h2 id="org-apache-commons-lang-builder-EqualsBuilder"><a href="#org-apache-commons-lang-builder-EqualsBuilder" class="headerlink" title="org.apache.commons.lang.builder.EqualsBuilder"></a>org.apache.commons.lang.builder.EqualsBuilder</h2><p>FROM - <a href="https://github.com/citerus/dddsample-core" target="_blank" rel="noopener">dddsample-core</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean sameEventAs(final HandlingEvent other) &#123;</span><br><span class="line">    return other != null &amp;&amp; new EqualsBuilder().</span><br><span class="line">            append(this.cargo, other.cargo).</span><br><span class="line">            append(this.voyage, other.voyage).</span><br><span class="line">            append(this.completionTime, other.completionTime).</span><br><span class="line">            append(this.location, other.location).</span><br><span class="line">            append(this.type, other.type).</span><br><span class="line">            isEquals();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="java-util-Objects"><a href="#java-util-Objects" class="headerlink" title="java.util.Objects"></a>java.util.Objects</h2><p>FROM - 阿里巴巴 JAVA 开发手册</p><blockquote><p>推荐使用 JDK7 引入的工具类 <code>java.util.Objects#equals</code></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static boolean equals(Object a, Object b) &#123;</span><br><span class="line">    return (a == b) || (a != null &amp;&amp; a.equals(b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单介绍一些帮助判断 equals 的方法&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://ashman.top/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://ashman.top/tags/Java/"/>
     
   </entry>
   

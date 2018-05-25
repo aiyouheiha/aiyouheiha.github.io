@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Front End, css" />
+  <meta name="keywords" content="Base64" />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8">
-<meta name="keywords" content="Front End, css">
+<meta name="description" content="代码内容 From io.jsonwebtoken.impl.Base64UrlCodec  12345678910111213141516171819202122protected char[] ensurePadding(char[] chars) &amp;#123;    char[] result = chars; //assume argument in case no padding is">
+<meta name="keywords" content="Base64">
 <meta property="og:type" content="article">
-<meta property="og:title" content="页面布局之堆叠">
-<meta property="og:url" content="http://ashman.top/2018/04/28/front-end/css/页面布局之堆叠/index.html">
+<meta property="og:title" content="Base64 解码时的填充问题">
+<meta property="og:url" content="http://ashman.top/2018/05/25/more/Base64 解码时的填充问题/index.html">
 <meta property="og:site_name" content="Singo &amp; Asher">
-<meta property="og:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8">
+<meta property="og:description" content="代码内容 From io.jsonwebtoken.impl.Base64UrlCodec  12345678910111213141516171819202122protected char[] ensurePadding(char[] chars) &amp;#123;    char[] result = chars; //assume argument in case no padding is">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-30T01:33:11.942Z">
+<meta property="og:updated_time" content="2018-05-25T06:57:07.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="页面布局之堆叠">
-<meta name="twitter:description" content="栗子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8">
+<meta name="twitter:title" content="Base64 解码时的填充问题">
+<meta name="twitter:description" content="代码内容 From io.jsonwebtoken.impl.Base64UrlCodec  12345678910111213141516171819202122protected char[] ensurePadding(char[] chars) &amp;#123;    char[] result = chars; //assume argument in case no padding is">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://ashman.top/2018/04/28/front-end/css/页面布局之堆叠/"/>
+  <link rel="canonical" href="http://ashman.top/2018/05/25/more/Base64 解码时的填充问题/"/>
 
 
 
 
 
-  <title>页面布局之堆叠 | Singo & Asher</title>
+  <title>Base64 解码时的填充问题 | Singo & Asher</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/04/28/front-end/css/页面布局之堆叠/">
+    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/05/25/more/Base64 解码时的填充问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Asher">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">页面布局之堆叠</h1>
+          <h1 class="post-title" itemprop="name headline">Base64 解码时的填充问题</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T22:22:22+08:00">
-                2018-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T10:15:39+08:00">
+                2018-05-25
               </time>
             
 
@@ -316,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Front-End/" itemprop="url" rel="index">
-                    <span itemprop="name">Front End</span>
+                  <a href="/categories/更多/" itemprop="url" rel="index">
+                    <span itemprop="name">更多</span>
                   </a>
                 </span>
 
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  903
+                  710
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -384,48 +384,48 @@
       
 
       
-        <h2 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;页面布局之堆叠&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">  .header &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .banner &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    z-index: 0;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: red;</span><br><span class="line">    height: 200px;</span><br><span class="line">    opacity: 0.3;</span><br><span class="line">  &#125;</span><br><span class="line">  .nav &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: 1;</span><br><span class="line">    width: 100%;</span><br><span class="line">    top: 0;</span><br><span class="line"></span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: grey;</span><br><span class="line">    height: 100px;</span><br><span class="line">    opacity: 0.6;</span><br><span class="line">  &#125;</span><br><span class="line">  .content &#123;</span><br><span class="line">    /* 以下配置项是为显示效果添加 */</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-end;</span><br><span class="line">    background: green;</span><br><span class="line">    height: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;banner&quot;&gt;This is banner&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;nav&quot;&gt;This is nav&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;content&quot;&gt;This is content&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><blockquote>
-<p>设置元素的堆叠顺序。</p>
+        <blockquote>
+<p>代码内容 From <a href="https://github.com/jwtk/jjwt" target="_blank" rel="noopener">io.jsonwebtoken.impl.Base64UrlCodec</a></p>
 </blockquote>
-<p>想象一个垂直于屏幕的 z 轴，其数值越大，对应元素距离用户越近。</p>
-<h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><blockquote>
-<p>规定元素的定位类型。</p>
-</blockquote>
-<h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><blockquote>
-<p>默认值。</p>
-</blockquote>
-<p>没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</p>
-<h3 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h3><blockquote>
-<p>生成绝对定位的元素，相对于 <strong>static 定位以外的第一个父元素</strong> 进行定位。</p>
-</blockquote>
-<p>元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
-<h3 id="fixed"><a href="#fixed" class="headerlink" title="fixed"></a>fixed</h3><blockquote>
-<p>生成绝对定位的元素，相对于 <strong>浏览器窗口</strong> 进行定位。</p>
-</blockquote>
-<p>元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
-<h3 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h3><blockquote>
-<p>生成相对定位的元素，相对于 <strong>其正常位置</strong> 进行定位。</p>
-</blockquote>
-<p>因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</p>
-<h3 id="inherit"><a href="#inherit" class="headerlink" title="inherit"></a>inherit</h3><blockquote>
-<p>规定应该从父元素继承 position 属性的值。</p>
-</blockquote>
-<h2 id="瞎掰"><a href="#瞎掰" class="headerlink" title="瞎掰"></a>瞎掰</h2><p>由此向下，内容为瞎掰，酌情～</p>
-<p>由此向下，内容为瞎掰，酌情～</p>
-<p>由此向下，内容为瞎掰，酌情～</p>
-<p>说三遍～</p>
-<hr>
-<h3 id="关于-absolute"><a href="#关于-absolute" class="headerlink" title="关于 absolute"></a>关于 absolute</h3><p>HTML 布局大致可以认为是各个元素按照出现顺序，依次排列。</p>
-<p>将某个元素 position 设置为 absolute 后，相当于将该元素从这个序列中拿出，后续元素填充其之前的位置。</p>
-<p>假如栗子中，让 nav 在前 banner 在后（其实最开始栗子我就是这么写的～咳咳～）。<br>此时，因为 banner 足够大，content 填充 banner 之前的位置后，会覆盖 banner（或被 banner 覆盖）。<br>那么，可能就需要通过设置 content 的 top 属性，在其上方填充一定像素的空白，恢复显示效果。</p>
-<h3 id="关于-nav-使用-absolute-relative-fixed-…"><a href="#关于-nav-使用-absolute-relative-fixed-…" class="headerlink" title="关于 nav 使用 absolute/relative/fixed/…"></a>关于 nav 使用 absolute/relative/fixed/…</h3><p>nav 设置为 relative 时，虽然也可以通过 top 上移，堆叠到 banner 的上方。<br>但是，下一个元素 content 不会受这个位置移动的影响，会留出了一段空白（可修改样例看下效果）。</p>
-<p>这样，想要覆盖这段空白，一种途径便是向上移动 content（默认 position 为 static 无法移动），<br>就需要添加 position 以及 top 样式的配置。如果后面还跟着 content2/3/4/… 那就“开心”了～</p>
-<p>嗯，这样来看，在需要堆叠的元素里，选择“占地面积”最大的，在最前面 relative，<br>后续待堆叠元素设置为 absolute 是个可以考虑的使用方式。</p>
-<p>不过，使用 absolute 时，width 设置比较麻烦，所以还是根据具体需求去设置啦～</p>
-<p>最后，也不要忘记还有 fixed 可以使用哈～以上～</p>
-<h3 id="关于-width"><a href="#关于-width" class="headerlink" title="关于 width"></a>关于 width</h3><p>相对于配置 <code>width: 100%</code>，使用如下方式（感觉）是个更好的选择，left 以及 right 限制宽度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">char</span>[] ensurePadding(<span class="keyword">char</span>[] chars) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span>[] result = chars; <span class="comment">//assume argument in case no padding is necessary</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> paddingCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//fix for https://github.com/jwtk/jjwt/issues/31</span></span><br><span class="line">    <span class="keyword">int</span> remainder = chars.length % <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">if</span> (remainder == <span class="number">2</span> || remainder == <span class="number">3</span>) &#123;</span><br><span class="line">        paddingCount = <span class="number">4</span> - remainder;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (paddingCount &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        result = <span class="keyword">new</span> <span class="keyword">char</span>[chars.length + paddingCount];</span><br><span class="line">        System.arraycopy(chars, <span class="number">0</span>, result, <span class="number">0</span>, chars.length);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; paddingCount; i++) &#123;</span><br><span class="line">            result[chars.length + i] = <span class="string">'='</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><p>为什么是否需要填充的 if 语句判定条件是 <code>remainder == 2 || remainder == 3</code>，<br>那么 remainder 为 0 或者 1 的时候为什么不需要填充呢？</p>
+<ul>
+<li>首先需要了解 Base64 的原理，可参考以下链接<ul>
+<li><a href="https://segmentfault.com/a/1190000004533485" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004533485</a><ul>
+<li><strong>PS</strong> 评论提到了“为什么一定要补位到 6 和 8 的公倍数”的问题</li>
+<li>给出的答案是为了应对 <strong>Base64 拼接</strong> 的问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="不需要填充"><a href="#不需要填充" class="headerlink" title="不需要填充"></a>不需要填充</h2><p>假设原字符串长度为 <code>n</code>，则对应的二进制位长度 <code>8 * n</code>，当该长度是 <code>6</code> 的倍数时，不需要进行填充。</p>
+<p>此时，编码后的二进制位长度应该是 <code>24</code> 的倍数：<code>24, 48, 72 ...</code></p>
+<p>对应字节数则应该是 <code>24 / 6 = 4</code> 的倍数：<code>4, 8, 12 ...</code></p>
+<p><strong>因此，在解码时，如果字节数是 <code>4</code> 的倍数（<code>remainder == 0</code>），不需要进行填充</strong></p>
+<h2 id="需要填充"><a href="#需要填充" class="headerlink" title="需要填充"></a>需要填充</h2><p>对于需要填充的情况，除去完全填充位（不包含任何原二进制位的填充位），其长度是怎样的一种情况呢？</p>
+<p>首先，二进制位总数必然是 <code>8</code> 的倍数，那么，当其除以 <code>6</code> 时，</p>
+<ul>
+<li>要么整除，是 <code>24</code> 的倍数；</li>
+<li>要么会余不超过 6 的二进制位</li>
+</ul>
+<p>又根据余数可乘性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a 与 b 的乘积除以 c 的余数，等于 a, b 分别除以 c 的余数之积（或这个积除以 c 的余数）</span><br></pre></td></tr></table></figure>
+<p>余数应该是 <code>(2 * [0-5]) % 6</code> 也即 <code>0, 2, 4</code>，也即非整除仅有 <code>2, 4</code> 两种情况。</p>
+<p>需要再填充一定的二进制位，使得其能够整除 <code>24</code>，<br>标准便是新增的位数需要能够整除 8 同时可以补足进行 Base64 划分的组（6位一组）</p>
+<ul>
+<li><strong>2</strong> 添加 <code>4 + 6 + 6</code> 新增 16 位便可</li>
+<li><strong>4</strong> 添加 <code>2 + 6</code> 新增 8 位即可</li>
+</ul>
+<p>也就是说，完全填充仅有填充 1 或者填充 2 两种情况；</p>
+<p>这也是为什么判定条件为 <code>remainder == 2 || remainder == 3</code>;</p>
+<p>如果出现 <code>remainder == 1</code> （需要填充 3）这根本不可能是一个合法的 Base64 字符串</p>
+<h2 id="有点绕？"><a href="#有点绕？" class="headerlink" title="有点绕？"></a>有点绕？</h2><p>假设 <code>remainder == 1</code> 也即字节数为 <code>4 * n + 1</code>，对应的二进制位数为 <code>4 * n * 6 + 6</code>；</p>
+<p>由于这是从 8 位字节转化而来的，出现这种形式的待完全填充字节序列，必然要符合如下命题：</p>
+<ul>
+<li><code>4 * n * 6 + [1-6]</code> 能够整除 <code>8</code></li>
+</ul>
+<p>这显然是一个伪命题，得证。</p>
 
       
     </div>
@@ -443,9 +443,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Front-End/" rel="tag"># Front End</a>
-          
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/Base64/" rel="tag"># Base64</a>
           
         </div>
       
@@ -458,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/26/front-end/css/页面布局之居中/" rel="next" title="页面布局之居中">
-                <i class="fa fa-chevron-left"></i> 页面布局之居中
+              <a href="/2018/05/23/more/一次对 Spring Security UserDetailsService 的借鉴/" rel="next" title="一次对 Spring Security UserDetailsService 的借鉴">
+                <i class="fa fa-chevron-left"></i> 一次对 Spring Security UserDetailsService 的借鉴
               </a>
             
           </div>
@@ -467,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/29/front-end/css/页面布局之导航菜单/" rel="prev" title="页面布局之导航菜单">
-                页面布局之导航菜单 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -640,7 +634,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栗子"><span class="nav-number">1.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-index"><span class="nav-number">2.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position"><span class="nav-number">3.</span> <span class="nav-text">position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">3.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#absolute"><span class="nav-number">3.2.</span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fixed"><span class="nav-number">3.3.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relative"><span class="nav-number">3.4.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inherit"><span class="nav-number">3.5.</span> <span class="nav-text">inherit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瞎掰"><span class="nav-number">4.</span> <span class="nav-text">瞎掰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-absolute"><span class="nav-number">4.1.</span> <span class="nav-text">关于 absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-nav-使用-absolute-relative-fixed-…"><span class="nav-number">4.2.</span> <span class="nav-text">关于 nav 使用 absolute/relative/fixed/…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-width"><span class="nav-number">4.3.</span> <span class="nav-text">关于 width</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#疑惑"><span class="nav-number">1.</span> <span class="nav-text">疑惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不需要填充"><span class="nav-number">2.</span> <span class="nav-text">不需要填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要填充"><span class="nav-number">3.</span> <span class="nav-text">需要填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有点绕？"><span class="nav-number">4.</span> <span class="nav-text">有点绕？</span></a></li></ol></div>
             
 
           </div>
