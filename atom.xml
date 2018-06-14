@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-05-25T06:57:07.279Z</updated>
+  <updated>2018-06-14T02:20:21.145Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac 快捷键</title>
+    <link href="http://ashman.top/2018/06/14/mac/Mac%20%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://ashman.top/2018/06/14/mac/Mac 快捷键/</id>
+    <published>2018-06-14T02:04:25.000Z</published>
+    <updated>2018-06-14T02:20:21.145Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">command + control + F    窗口最大化</span><br><span class="line">command + N              新建标签页</span><br><span class="line">command + W              关闭当前标签页</span><br><span class="line">command + Q              退出当前应用</span><br><span class="line">command + shift + N      无痕模式（浏览器）</span><br></pre></td></tr></table></figure><h2 id="command-control-F"><a href="#command-control-F" class="headerlink" title="command + control + F"></a><code>command + control + F</code></h2><blockquote><p>窗口最大化</p></blockquote><p>在知道这个命令之前，都是四指向上轻扫打开调度中心，然后把应用拖过去的人，默默泪奔 … …</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;汇总&quot;&gt;&lt;a href=&quot;#汇总&quot; class=&quot;headerlink&quot; title=&quot;汇总&quot;&gt;&lt;/a&gt;汇总&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="mac" scheme="http://ashman.top/categories/mac/"/>
+    
+    
+      <category term="MacBook" scheme="http://ashman.top/tags/MacBook/"/>
+    
+  </entry>
   
   <entry>
     <title>Base64 解码时的填充问题</title>
@@ -506,34 +531,6 @@
     
     
       <category term="Git" scheme="http://ashman.top/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring Boot with Swagger</title>
-    <link href="http://ashman.top/2017/11/21/spring/spring-boot/spring-boot-with-swagger/"/>
-    <id>http://ashman.top/2017/11/21/spring/spring-boot/spring-boot-with-swagger/</id>
-    <published>2017-11-21T10:40:43.000Z</published>
-    <updated>2017-11-21T15:32:33.835Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>THE WORLD’S MOST POPULAR API TOOLING</p></blockquote><a id="more"></a><h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- swagger --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.6.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.6.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger</span>2</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"top.ashman.sample.controller"</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">                .title(<span class="string">"API Title - Powered by Swagger"</span>)</span><br><span class="line">                .description(<span class="string">"Description of API"</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">"sample.ashman.top"</span>)</span><br><span class="line">                .version(<span class="string">"v1"</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api</span>(value = <span class="string">"Demo API"</span>)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/v1/demo"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DemoService demoService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation</span>(value = <span class="string">"Create Demo"</span>)</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">create</span><span class="params">(@RequestBody DemoCommand demoCommand)</span> <span class="keyword">throws</span> URISyntaxException </span>&#123;</span><br><span class="line">        Demo demo = demoService.create(demoCommand);</span><br><span class="line">        URI uri = <span class="keyword">new</span> URI(<span class="string">"/v1/demo/"</span> + demo.getId());</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.created(uri).build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="一个遇到的问题"><a href="#一个遇到的问题" class="headerlink" title="一个遇到的问题"></a>一个遇到的问题</h2><p>代码实现时，针对 <code>@RequestMapping</code> 做了切面方法，用来记录请求数据和返回值。<br>在切面方法中，使用了 <code>Method java.lang.Class#getMethod(String name, Class&lt;?&gt;... parameterTypes)</code> 方法。</p><p>关于这个方法，其注释中注明了这是一个用于获取 public 方法的方法：</p><ul><li>Returns a {@code Method} object that reflects the specified <strong>public</strong> member method of the class or interface represented by this {@code Class} object. </li></ul><p>而 Swagger <code>springfox.documentation.swagger.web.ApiResourceController</code> 中，<br><code>@RequestMapping</code> 注解下的 uiConfiguration 方法并非一个 public 方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = &quot;/configuration/ui&quot;)</span><br><span class="line">@ResponseBody</span><br><span class="line">ResponseEntity&lt;UiConfiguration&gt; uiConfiguration() &#123;</span><br><span class="line">return new ResponseEntity&lt;UiConfiguration&gt;(</span><br><span class="line">    Optional.fromNullable(uiConfiguration).or(UiConfiguration.DEFAULT), HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这导致了切面调用的 <code>getMethod</code> 方法无法正常执行，抛出 <code>NoSuchMethodException</code> 异常：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// getMethod 方法代码片段</span><br><span class="line">if (method == null) &#123;</span><br><span class="line">    throw new NoSuchMethodException(getName() + &quot;.&quot; + name + argumentTypesToString(parameterTypes));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也就导致无法正常使用 Swagger 的 UI 功能。</p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="https://swagger.io/" target="_blank" rel="noopener">World’s Most Popular API Framework | Swagger</a></li><li><a href="http://blog.csdn.net/forezp/article/details/71023536" target="_blank" rel="noopener">Spring Boot 集成 Swagger2 - 构建优雅的 Restful API</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;THE WORLD’S MOST POPULAR API TOOLING&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="http://ashman.top/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="http://ashman.top/tags/Spring-Boot/"/>
-    
-      <category term="Swagger" scheme="http://ashman.top/tags/Swagger/"/>
-    
-      <category term="RESTful API" scheme="http://ashman.top/tags/RESTful-API/"/>
     
   </entry>
   
