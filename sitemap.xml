@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ashman.top/2018/07/09/more/mac-install-nexus/</loc>
+    
+    <lastmod>2018-07-09T03:23:19.252Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ashman.top/2018/06/14/mac/Mac%20%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     
     <lastmod>2018-06-14T02:20:21.145Z</lastmod>
@@ -184,6 +191,13 @@
   </url>
   
   <url>
+    <loc>http://ashman.top/2017/11/03/mongodb/install-mongodb-centos7/</loc>
+    
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ashman.top/2017/11/12/hello-world/</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
@@ -198,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/03/mongodb/install-mongodb-centos7/</loc>
-    
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
@@ -212,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://ashman.top/tags/index.html</loc>
+    <loc>http://ashman.top/categories/index.html</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ashman.top/categories/index.html</loc>
+    <loc>http://ashman.top/tags/index.html</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
