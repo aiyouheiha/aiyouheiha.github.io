@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ashman.top/2018/07/10/more/maven-command/</loc>
+    
+    <lastmod>2018-07-10T03:10:50.944Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ashman.top/2018/07/09/more/mac-install-nexus/</loc>
     
     <lastmod>2018-07-09T03:23:19.252Z</lastmod>
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
+    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
     
     <lastmod>2017-11-21T15:32:33.836Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
+    <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
     
     <lastmod>2017-11-21T15:32:33.836Z</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/03/mongodb/install-mongodb-centos7/</loc>
+    <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <loc>http://ashman.top/2017/11/03/mongodb/install-mongodb-centos7/</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
@@ -212,14 +219,7 @@
   </url>
   
   <url>
-    <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
-    
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ashman.top/categories/index.html</loc>
+    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
@@ -227,6 +227,13 @@
   
   <url>
     <loc>http://ashman.top/tags/index.html</loc>
+    
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ashman.top/categories/index.html</loc>
     
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     
