@@ -11,6 +11,44 @@ keywords: MySQL
 
 <!-- more -->
 
+## Install
+
+### Install MariaDB on CentOS
+
+```
+$ sudo yum install mysql
+```
+
+Indeed install MariaDB, not MySQL
+
+```
+$ rpm -qa | grep mariadb
+mariadb-libs-5.5.56-2.el7.x86_64
+mariadb-5.5.56-2.el7.x86_64
+
+$ sudo yum -y install mariadb-server
+
+$ rpm -qa | grep mariadb
+mariadb-libs-5.5.56-2.el7.x86_64
+mariadb-5.5.56-2.el7.x86_64
+mariadb-server-5.5.56-2.el7.x86_64
+```
+
+Start MariaDB
+
+```
+$ systemctl start mariadb
+```
+
+Initialize MariaDB
+
+```
+$ mysql_secure_installation
+```
+
+- 初始没有 root 密码，直接回车即可，之后设定 root 密码以及各项配置
+
+
 ## 库操作
 
 ```mysql
