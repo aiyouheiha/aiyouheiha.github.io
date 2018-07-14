@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashman.top/"/>
-  <updated>2018-07-11T08:56:19.651Z</updated>
+  <updated>2018-07-14T19:15:18.308Z</updated>
   <id>http://ashman.top/</id>
   
   <author>
@@ -15,6 +15,91 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小程序踩坑记</title>
+    <link href="http://ashman.top/2018/07/14/more/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91%E8%AE%B0/"/>
+    <id>http://ashman.top/2018/07/14/more/小程序踩坑记/</id>
+    <published>2018-07-14T14:54:03.000Z</published>
+    <updated>2018-07-14T19:15:18.308Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用组件时的离奇报错"><a href="#使用组件时的离奇报错" class="headerlink" title="使用组件时的离奇报错"></a>使用组件时的离奇报错</h2><p><strong>问题描述</strong></p><ul><li>组件在其他 page 下使用未见异常</li><li>不使用组件，当前 page 不会异常</li></ul><p><strong>错误文件 index.json</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;navigationBarTitleText&quot;: &quot;Let&apos;s Chat&quot;,</span><br><span class="line">  &quot;usingComponents&quot;: &#123;</span><br><span class="line">    &quot;h-alert&quot;: &quot;/components/alert/alert&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>报错原因</strong></p><ul><li><code>Let&#39;s Chat</code> 中的 <strong>单引号</strong></li></ul><p><strong>出现的报错</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Uncaught SyntaxError: missing ) after argument list</span><br><span class="line">渲染层错误</span><br><span class="line">exparserScriptError</span><br><span class="line">  t is not a function</span><br><span class="line">  TypeError: t is not a function</span><br><span class="line"></span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;使用组件时的离奇报错&quot;&gt;&lt;a href=&quot;#使用组件时的离奇报错&quot; class=&quot;headerlink&quot; title=&quot;使用组件时的离奇报错&quot;&gt;&lt;/a&gt;使用组件时的离奇报错&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;问题描述&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;组件在
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="http://ashman.top/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://ashman.top/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 命令</title>
+    <link href="http://ashman.top/2018/07/13/more/docker-command/"/>
+    <id>http://ashman.top/2018/07/13/more/docker-command/</id>
+    <published>2018-07-13T02:29:08.000Z</published>
+    <updated>2018-07-13T08:21:23.904Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p><code>docker version</code></p><ul><li>显示 Docker 版本信息</li></ul></li><li><p><code>docker search redis</code></p><ul><li>从 Docker Hub 查找镜像</li></ul></li><li><p><code>docker pull redis</code> or <code>docker pull redis:latest</code> or <code>docker pull redis:other-version</code></p><ul><li>从镜像仓库中拉取或者更新指定镜像</li></ul></li><li><p><code>docker images</code> or <code>docker images redis</code></p><ul><li>列出本地镜像</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;docker version&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;显示 Docker 版本信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;docker search redis&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从 
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://ashman.top/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://ashman.top/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac Install Jenkins</title>
+    <link href="http://ashman.top/2018/07/13/more/mac-install-jenkins/"/>
+    <id>http://ashman.top/2018/07/13/more/mac-install-jenkins/</id>
+    <published>2018-07-13T02:29:08.000Z</published>
+    <updated>2018-07-13T07:12:20.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Install-or-Upgrade"><a href="#Install-or-Upgrade" class="headerlink" title="Install or Upgrade"></a>Install or Upgrade</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br><span class="line">Error: jenkins 2.101 is already installed</span><br><span class="line">To upgrade to 2.131, run `brew upgrade jenkins`</span><br><span class="line"></span><br><span class="line">$ brew upgrade jenkins</span><br></pre></td></tr></table></figure><h2 id="Uninstall-or-Remove-All"><a href="#Uninstall-or-Remove-All" class="headerlink" title="Uninstall or Remove All"></a>Uninstall or Remove All</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall jenkins</span><br><span class="line">Uninstalling /usr/local/Cellar/jenkins/2.131... (7 files, 75MB)</span><br><span class="line">jenkins 2.101 1 is still installed.</span><br><span class="line">Remove all versions with `brew uninstall --force jenkins`.</span><br><span class="line"></span><br><span class="line">$ brew uninstall --force jenkins</span><br></pre></td></tr></table></figure><h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure><p>浏览器访问 <code>localhost:8080</code></p><h2 id="Unlock-Jenkins"><a href="#Unlock-Jenkins" class="headerlink" title="Unlock Jenkins"></a>Unlock Jenkins</h2><p>按照提示，找到 <code>initialAdminPassword</code> 输入并继续。</p><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul><li><a href="https://www.cnblogs.com/kevingrace/p/6019707.html" target="_blank" rel="noopener">Jenkins 配置记录 – 添加用户权限</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Install-or-Upgrade&quot;&gt;&lt;a href=&quot;#Install-or-Upgrade&quot; class=&quot;headerlink&quot; title=&quot;Install or Upgrade&quot;&gt;&lt;/a&gt;Install or Upgrade&lt;/h2&gt;&lt;figure c
+      
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://ashman.top/categories/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="http://ashman.top/tags/Jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>Fault Record</title>
@@ -464,79 +549,11 @@
       <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
     
     
-      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
-    
       <category term="Redis" scheme="http://ashman.top/tags/Redis/"/>
     
       <category term="Cluster" scheme="http://ashman.top/tags/Cluster/"/>
     
-  </entry>
-  
-  <entry>
-    <title>MySQL 命令</title>
-    <link href="http://ashman.top/2018/01/10/more/mysql-command/"/>
-    <id>http://ashman.top/2018/01/10/more/mysql-command/</id>
-    <published>2018-01-10T02:33:01.000Z</published>
-    <updated>2018-07-11T09:23:37.421Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里会简单介绍 MySQL 操作命令（持续更新……）</p><a id="more"></a><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Install-MariaDB-on-CentOS"><a href="#Install-MariaDB-on-CentOS" class="headerlink" title="Install MariaDB on CentOS"></a>Install MariaDB on CentOS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install mysql</span><br></pre></td></tr></table></figure><p>Indeed install MariaDB, not MySQL</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep mariadb</span><br><span class="line">mariadb-libs-5.5.56-2.el7.x86_64</span><br><span class="line">mariadb-5.5.56-2.el7.x86_64</span><br><span class="line"></span><br><span class="line">$ sudo yum -y install mariadb-server</span><br><span class="line"></span><br><span class="line">$ rpm -qa | grep mariadb</span><br><span class="line">mariadb-libs-5.5.56-2.el7.x86_64</span><br><span class="line">mariadb-5.5.56-2.el7.x86_64</span><br><span class="line">mariadb-server-5.5.56-2.el7.x86_64</span><br></pre></td></tr></table></figure><p>Start MariaDB</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start mariadb</span><br></pre></td></tr></table></figure><p>Initialize MariaDB</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql_secure_installation</span><br></pre></td></tr></table></figure><ul><li>初始没有 root 密码，直接回车即可，之后设定 root 密码以及各项配置</li></ul><h2 id="库操作"><a href="#库操作" class="headerlink" title="库操作"></a>库操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br><span class="line">create database db_name;</span><br><span class="line">use db_name;</span><br><span class="line">drop database db_name;</span><br></pre></td></tr></table></figure><h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="列出表"><a href="#列出表" class="headerlink" title="列出表"></a>列出表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure><h3 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `tb_name` (</span><br><span class="line">  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;Primary Key&apos;,</span><br><span class="line">  `name` varchar(30) NOT NULL COMMENT &apos;Name&apos;,</span><br><span class="line">  `description` varchar(30) DEFAULT NULL COMMENT &apos;Description&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure><h3 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe tb_name;</span><br></pre></td></tr></table></figure><h2 id="用户操作"><a href="#用户操作" class="headerlink" title="用户操作"></a>用户操作</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure><p>e.g.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;test&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select Host, User from mysql.user;</span><br><span class="line">+-----------+---------------+</span><br><span class="line">| Host      | User          |</span><br><span class="line">+-----------+---------------+</span><br><span class="line">| %         | test          |</span><br><span class="line">| localhost | mysql.session |</span><br><span class="line">| localhost | mysql.sys     |</span><br><span class="line">| localhost | root          |</span><br><span class="line">+-----------+---------------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure><h3 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRANT INSERT, DELETE, UPDATE, SELECT ON db_name.tb_name TO &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">GRANT INSERT, DELETE, UPDATE, SELECT ON db_name.* TO &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">GRANT ALL ON db_name.* TO &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure><h3 id="取消授权"><a href="#取消授权" class="headerlink" title="取消授权"></a>取消授权</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE ALL ON db_name.* FROM &apos;username&apos;@&apos;host&apos;;</span><br><span class="line">REVOKE INSERT, DELETE, UPDATE, SELECT ON db_name.tb_name FROM &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="http://blog.csdn.net/liuxiao723846/article/details/49583827" target="_blank" rel="noopener">MySQL 用户表中多个 Host 时的匹配规则</a></li><li><a href="https://www.jianshu.com/p/d7b9c468f20d" target="_blank" rel="noopener">MySQL 创建用户与授权</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里会简单介绍 MySQL 操作命令（持续更新……）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
-    
-    
-      <category term="MySQL" scheme="http://ashman.top/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB 安装及使用 - Mac</title>
-    <link href="http://ashman.top/2018/01/09/mongodb/install-mongodb-mac/"/>
-    <id>http://ashman.top/2018/01/09/mongodb/install-mongodb-mac/</id>
-    <published>2018-01-09T07:56:10.000Z</published>
-    <updated>2018-01-11T08:26:43.574Z</updated>
-    
-    <content type="html"><![CDATA[<p>在 Mac 上安装及使用 MongoDB</p><a id="more"></a><h2 id="安装-启动-停止-卸载"><a href="#安装-启动-停止-卸载" class="headerlink" title="安装/启动/停止/卸载"></a>安装/启动/停止/卸载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ brew install mongodb</span><br><span class="line">$ brew services start mongodb</span><br><span class="line">$ brew services stop mongodb</span><br><span class="line">$ brew uninstal mongodb</span><br></pre></td></tr></table></figure><h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><ul><li>文件路径 <code>/usr/local/etc/mongod.conf</code></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  path: /usr/local/var/log/mongodb/mongo.log</span><br><span class="line">  logAppend: true</span><br><span class="line">storage:</span><br><span class="line">  dbPath: /usr/local/var/mongodb</span><br><span class="line">net:</span><br><span class="line">  bindIp: 127.0.0.1</span><br></pre></td></tr></table></figure><h2 id="To-be-continue-…"><a href="#To-be-continue-…" class="headerlink" title="To be continue …"></a>To be continue …</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在 Mac 上安装及使用 MongoDB&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="MongoDB" scheme="http://ashman.top/categories/MongoDB/"/>
-    
-    
-      <category term="MongoDB" scheme="http://ashman.top/tags/MongoDB/"/>
-    
       <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vim 命令</title>
-    <link href="http://ashman.top/2018/01/09/more/vim-command/"/>
-    <id>http://ashman.top/2018/01/09/more/vim-command/</id>
-    <published>2018-01-09T06:03:27.000Z</published>
-    <updated>2018-02-01T02:42:28.130Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里会简单介绍 Vim 操作命令（持续更新……）</p><a id="more"></a><h2 id="整行移动"><a href="#整行移动" class="headerlink" title="整行移动"></a>整行移动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0   移动到行首</span><br><span class="line">$   移动到行末</span><br><span class="line">+   移动到下一行开头</span><br><span class="line">-   移动到上一行开头</span><br></pre></td></tr></table></figure><h2 id="多窗口"><a href="#多窗口" class="headerlink" title="多窗口"></a>多窗口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">control + w + v                新建一个纵向窗口，打开当前文件</span><br><span class="line">:vs                            等价于 [control + w + v]</span><br><span class="line">:vs path                       新建一个纵向窗口，打开指定 path</span><br><span class="line">control + w &gt;&gt;&gt; w              多窗口间切换，即先使用组合键 [control + w] 之后再次点击 [w]</span><br><span class="line">control + w &gt;&gt;&gt; control + w    等价于 [control + w &gt;&gt;&gt; w]</span><br></pre></td></tr></table></figure><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="https://www.cnblogs.com/nerxious/archive/2012/12/21/2827303.html" target="_blank" rel="noopener">轻快的VIM（一）：移动</a></li><li><a href="http://vimcdoc.sourceforge.net/doc/usr_08.html#usr_08.txt" target="_blank" rel="noopener">VIM 用户手册 usr_08.txt</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里会简单介绍 Vim 操作命令（持续更新……）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
-    
-    
-      <category term="Vim" scheme="http://ashman.top/tags/Vim/"/>
     
   </entry>
   
