@@ -448,6 +448,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/07/13/more/mac-install-jenkins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Asher">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Singo & Asher">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/13/more/mac-install-jenkins/" itemprop="url">Mac Install Jenkins</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T10:29:08+08:00">
+                2018-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  114
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Install-or-Upgrade"><a href="#Install-or-Upgrade" class="headerlink" title="Install or Upgrade"></a>Install or Upgrade</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br><span class="line">Error: jenkins 2.101 is already installed</span><br><span class="line">To upgrade to 2.131, run `brew upgrade jenkins`</span><br><span class="line"></span><br><span class="line">$ brew upgrade jenkins</span><br></pre></td></tr></table></figure>
+<h2 id="Uninstall-or-Remove-All"><a href="#Uninstall-or-Remove-All" class="headerlink" title="Uninstall or Remove All"></a>Uninstall or Remove All</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall jenkins</span><br><span class="line">Uninstalling /usr/local/Cellar/jenkins/2.131... (7 files, 75MB)</span><br><span class="line">jenkins 2.101 1 is still installed.</span><br><span class="line">Remove all versions with `brew uninstall --force jenkins`.</span><br><span class="line"></span><br><span class="line">$ brew uninstall --force jenkins</span><br></pre></td></tr></table></figure>
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure>
+<p>浏览器访问 <code>localhost:8080</code></p>
+<h2 id="Unlock-Jenkins"><a href="#Unlock-Jenkins" class="headerlink" title="Unlock Jenkins"></a>Unlock Jenkins</h2><p>按照提示，找到 <code>initialAdminPassword</code> 输入并继续。</p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
+<li><a href="https://www.cnblogs.com/kevingrace/p/6019707.html" target="_blank" rel="noopener">Jenkins 配置记录 – 添加用户权限</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/07/13/more/docker-command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -593,186 +773,6 @@
 <li>列出本地镜像</li>
 </ul>
 </li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ashman.top/2018/07/13/more/mac-install-jenkins/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Asher">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Singo & Asher">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/13/more/mac-install-jenkins/" itemprop="url">Mac Install Jenkins</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T10:29:08+08:00">
-                2018-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
-                    <span itemprop="name">Jenkins</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  114
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Install-or-Upgrade"><a href="#Install-or-Upgrade" class="headerlink" title="Install or Upgrade"></a>Install or Upgrade</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br><span class="line">Error: jenkins 2.101 is already installed</span><br><span class="line">To upgrade to 2.131, run `brew upgrade jenkins`</span><br><span class="line"></span><br><span class="line">$ brew upgrade jenkins</span><br></pre></td></tr></table></figure>
-<h2 id="Uninstall-or-Remove-All"><a href="#Uninstall-or-Remove-All" class="headerlink" title="Uninstall or Remove All"></a>Uninstall or Remove All</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall jenkins</span><br><span class="line">Uninstalling /usr/local/Cellar/jenkins/2.131... (7 files, 75MB)</span><br><span class="line">jenkins 2.101 1 is still installed.</span><br><span class="line">Remove all versions with `brew uninstall --force jenkins`.</span><br><span class="line"></span><br><span class="line">$ brew uninstall --force jenkins</span><br></pre></td></tr></table></figure>
-<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure>
-<p>浏览器访问 <code>localhost:8080</code></p>
-<h2 id="Unlock-Jenkins"><a href="#Unlock-Jenkins" class="headerlink" title="Unlock Jenkins"></a>Unlock Jenkins</h2><p>按照提示，找到 <code>initialAdminPassword</code> 输入并继续。</p>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
-<li><a href="https://www.cnblogs.com/kevingrace/p/6019707.html" target="_blank" rel="noopener">Jenkins 配置记录 – 添加用户权限</a></li>
 </ul>
 
           

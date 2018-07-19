@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://ashman.top/2018/01/10/more/mysql-command/</loc>
+    <lastmod>2018-07-19T02:33:56.353Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL 命令</title>
+        <pubTime>2018-01-10T02:33:01.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2018/07/14/more/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91%E8%AE%B0/</loc>
     <lastmod>2018-07-14T19:15:18.308Z</lastmod>
     <data>
@@ -57,26 +77,6 @@
            
              
               <breadCrumb title="Jenkins" url="http://ashman.top/categories/Jenkins/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2018/01/10/more/mysql-command/</loc>
-    <lastmod>2018-07-11T09:23:37.421Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL 命令</title>
-        <pubTime>2018-01-10T02:33:01.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
           
         </display>
     </data>
@@ -483,11 +483,11 @@
         <title>Redis Cluster - Mac</title>
         <pubTime>2018-01-11T08:24:06.000Z</pubTime>
         
+        <tag>Mac</tag>
+         
         <tag>Redis</tag>
          
         <tag>Cluster</tag>
-         
-        <tag>Mac</tag>
          
          
            
@@ -507,9 +507,9 @@
         <title>MongoDB 安装及使用 - Mac</title>
         <pubTime>2018-01-09T07:56:10.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>MongoDB</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -684,15 +684,22 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
+        <title>设计模式 - 访问者模式</title>
+        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
         
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
          
            
+             
+              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
         </display>
     </data>
     </url>
@@ -721,28 +728,6 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式 - 访问者模式</title>
-        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
@@ -759,6 +744,21 @@
              
               <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>

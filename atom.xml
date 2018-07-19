@@ -44,6 +44,31 @@
   </entry>
   
   <entry>
+    <title>Mac Install Jenkins</title>
+    <link href="http://ashman.top/2018/07/13/more/mac-install-jenkins/"/>
+    <id>http://ashman.top/2018/07/13/more/mac-install-jenkins/</id>
+    <published>2018-07-13T02:29:08.000Z</published>
+    <updated>2018-07-13T07:12:20.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Install-or-Upgrade"><a href="#Install-or-Upgrade" class="headerlink" title="Install or Upgrade"></a>Install or Upgrade</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br><span class="line">Error: jenkins 2.101 is already installed</span><br><span class="line">To upgrade to 2.131, run `brew upgrade jenkins`</span><br><span class="line"></span><br><span class="line">$ brew upgrade jenkins</span><br></pre></td></tr></table></figure><h2 id="Uninstall-or-Remove-All"><a href="#Uninstall-or-Remove-All" class="headerlink" title="Uninstall or Remove All"></a>Uninstall or Remove All</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall jenkins</span><br><span class="line">Uninstalling /usr/local/Cellar/jenkins/2.131... (7 files, 75MB)</span><br><span class="line">jenkins 2.101 1 is still installed.</span><br><span class="line">Remove all versions with `brew uninstall --force jenkins`.</span><br><span class="line"></span><br><span class="line">$ brew uninstall --force jenkins</span><br></pre></td></tr></table></figure><h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure><p>浏览器访问 <code>localhost:8080</code></p><h2 id="Unlock-Jenkins"><a href="#Unlock-Jenkins" class="headerlink" title="Unlock Jenkins"></a>Unlock Jenkins</h2><p>按照提示，找到 <code>initialAdminPassword</code> 输入并继续。</p><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul><li><a href="https://www.cnblogs.com/kevingrace/p/6019707.html" target="_blank" rel="noopener">Jenkins 配置记录 – 添加用户权限</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Install-or-Upgrade&quot;&gt;&lt;a href=&quot;#Install-or-Upgrade&quot; class=&quot;headerlink&quot; title=&quot;Install or Upgrade&quot;&gt;&lt;/a&gt;Install or Upgrade&lt;/h2&gt;&lt;figure c
+      
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://ashman.top/categories/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="http://ashman.top/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Docker 命令</title>
     <link href="http://ashman.top/2018/07/13/more/docker-command/"/>
     <id>http://ashman.top/2018/07/13/more/docker-command/</id>
@@ -73,31 +98,6 @@
     
     
       <category term="Docker" scheme="http://ashman.top/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac Install Jenkins</title>
-    <link href="http://ashman.top/2018/07/13/more/mac-install-jenkins/"/>
-    <id>http://ashman.top/2018/07/13/more/mac-install-jenkins/</id>
-    <published>2018-07-13T02:29:08.000Z</published>
-    <updated>2018-07-13T07:12:20.227Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Install-or-Upgrade"><a href="#Install-or-Upgrade" class="headerlink" title="Install or Upgrade"></a>Install or Upgrade</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br><span class="line">Error: jenkins 2.101 is already installed</span><br><span class="line">To upgrade to 2.131, run `brew upgrade jenkins`</span><br><span class="line"></span><br><span class="line">$ brew upgrade jenkins</span><br></pre></td></tr></table></figure><h2 id="Uninstall-or-Remove-All"><a href="#Uninstall-or-Remove-All" class="headerlink" title="Uninstall or Remove All"></a>Uninstall or Remove All</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall jenkins</span><br><span class="line">Uninstalling /usr/local/Cellar/jenkins/2.131... (7 files, 75MB)</span><br><span class="line">jenkins 2.101 1 is still installed.</span><br><span class="line">Remove all versions with `brew uninstall --force jenkins`.</span><br><span class="line"></span><br><span class="line">$ brew uninstall --force jenkins</span><br></pre></td></tr></table></figure><h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure><p>浏览器访问 <code>localhost:8080</code></p><h2 id="Unlock-Jenkins"><a href="#Unlock-Jenkins" class="headerlink" title="Unlock Jenkins"></a>Unlock Jenkins</h2><p>按照提示，找到 <code>initialAdminPassword</code> 输入并继续。</p><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul><li><a href="https://www.cnblogs.com/kevingrace/p/6019707.html" target="_blank" rel="noopener">Jenkins 配置记录 – 添加用户权限</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Install-or-Upgrade&quot;&gt;&lt;a href=&quot;#Install-or-Upgrade&quot; class=&quot;headerlink&quot; title=&quot;Install or Upgrade&quot;&gt;&lt;/a&gt;Install or Upgrade&lt;/h2&gt;&lt;figure c
-      
-    
-    </summary>
-    
-      <category term="Jenkins" scheme="http://ashman.top/categories/Jenkins/"/>
-    
-    
-      <category term="Jenkins" scheme="http://ashman.top/tags/Jenkins/"/>
     
   </entry>
   
@@ -549,11 +549,11 @@
       <category term="更多" scheme="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
     
     
+      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
+    
       <category term="Redis" scheme="http://ashman.top/tags/Redis/"/>
     
       <category term="Cluster" scheme="http://ashman.top/tags/Cluster/"/>
-    
-      <category term="Mac" scheme="http://ashman.top/tags/Mac/"/>
     
   </entry>
   
