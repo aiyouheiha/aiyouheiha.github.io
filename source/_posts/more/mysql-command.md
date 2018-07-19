@@ -83,6 +83,12 @@ CREATE TABLE `tb_name` (
 describe tb_name;
 ```
 
+### DDL (Data Definition Language)
+
+```
+SHOW CREATE TABLE table_name;
+```
+
 ## 用户操作
 
 ### 新建用户
@@ -124,6 +130,15 @@ REVOKE ALL ON db_name.* FROM 'username'@'host';
 REVOKE INSERT, DELETE, UPDATE, SELECT ON db_name.tb_name FROM 'username'@'host';
 ```
 
+## 举个栗子
+
+### 列出表中最近的十条记录
+
+- 按创建时间倒序排列并限制十条
+
+```
+SELECT * FROM table_name ORDER BY created_time DESC LIMIT 10;
+```
 
 ## 参考链接
 
