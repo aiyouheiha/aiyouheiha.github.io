@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://ashman.top/2018/08/14/more/etcd/</loc>
+    <lastmod>2018-08-14T11:04:44.759Z</lastmod>
+    <data>
+        <display>
+        <title>etcd</title>
+        <pubTime>2018-08-14T11:01:00.000Z</pubTime>
+        
+        <tag>etcd</tag>
+         
+         
+           
+             
+              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2018/08/14/more/component-init-and-destroy/</loc>
+    <lastmod>2018-08-14T10:48:12.914Z</lastmod>
+    <data>
+        <display>
+        <title>Component - init and destroy</title>
+        <pubTime>2018-08-14T10:46:19.000Z</pubTime>
+        
+        <tag>Spring</tag>
+         
+         
+           
+             
+              <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2018/07/13/more/docker-command/</loc>
+    <lastmod>2018-07-27T07:18:59.032Z</lastmod>
+    <data>
+        <display>
+        <title>Docker 命令</title>
+        <pubTime>2018-07-13T02:29:08.000Z</pubTime>
+        
+        <tag>Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="Docker" url="http://ashman.top/categories/Docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2018/01/10/more/mysql-command/</loc>
     <lastmod>2018-07-19T02:33:56.353Z</lastmod>
     <data>
@@ -37,26 +97,6 @@
            
              
               <breadCrumb title="小程序" url="http://ashman.top/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2018/07/13/more/docker-command/</loc>
-    <lastmod>2018-07-13T08:21:23.904Z</lastmod>
-    <data>
-        <display>
-        <title>Docker 命令</title>
-        <pubTime>2018-07-13T02:29:08.000Z</pubTime>
-        
-        <tag>Docker</tag>
-         
-         
-           
-             
-              <breadCrumb title="Docker" url="http://ashman.top/categories/Docker/"/>
           
         </display>
     </data>
@@ -564,6 +604,30 @@
 
     
   <url>
+    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
+    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Data JPA Auditing</title>
+        <pubTime>2017-11-13T06:48:46.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Boot</tag>
+         
+        <tag>JPA</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Data" url="http://ashman.top/categories/Spring-Data/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
     <lastmod>2017-11-21T15:32:33.836Z</lastmod>
     <data>
@@ -583,30 +647,6 @@
            
              
               <breadCrumb title="Spring Cloud" url="http://ashman.top/categories/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
-    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Data JPA Auditing</title>
-        <pubTime>2017-11-13T06:48:46.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Boot</tag>
-         
-        <tag>JPA</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Data" url="http://ashman.top/categories/Spring-Data/"/>
           
         </display>
     </data>
@@ -684,22 +724,15 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
+    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
         <display>
-        <title>设计模式 - 访问者模式</title>
-        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
+        <title>Hello World</title>
+        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
         
-        <tag>Java</tag>
-         
-        <tag>设计模式</tag>
-         
          
            
-             
-              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
         </display>
     </data>
     </url>
@@ -728,12 +761,12 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
+    <loc>http://ashman.top/2017/10/11/design-pattern/behavioral-design-pattern/visitor-pattern/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
         <display>
-        <title>设计模式 - 命令模式</title>
-        <pubTime>2017-11-06T10:11:52.000Z</pubTime>
+        <title>设计模式 - 访问者模式</title>
+        <pubTime>2017-10-11T12:05:57.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -750,15 +783,22 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <loc>http://ashman.top/2017/11/06/design-pattern/behavioral-design-pattern/command-pattern/</loc>
     <lastmod>2017-11-12T09:52:52.000Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
+        <title>设计模式 - 命令模式</title>
+        <pubTime>2017-11-06T10:11:52.000Z</pubTime>
         
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
          
            
+             
+              <breadCrumb title="设计模式" url="http://ashman.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
         </display>
     </data>
     </url>

@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="docker version  显示 Docker 版本信息   docker search redis  从 Docker Hub 查找镜像   docker pull redis or docker pull redis:latest or docker pull redis:other-version  从镜像仓库中拉取或者更新指定镜像   docker images or docker">
+<meta name="description" content="Use command --help is helpful.">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 命令">
 <meta property="og:url" content="http://ashman.top/2018/07/13/more/docker-command/index.html">
 <meta property="og:site_name" content="Singo &amp; Asher">
-<meta property="og:description" content="docker version  显示 Docker 版本信息   docker search redis  从 Docker Hub 查找镜像   docker pull redis or docker pull redis:latest or docker pull redis:other-version  从镜像仓库中拉取或者更新指定镜像   docker images or docker">
+<meta property="og:description" content="Use command --help is helpful.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-13T08:21:23.904Z">
+<meta property="og:updated_time" content="2018-07-27T07:18:59.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 命令">
-<meta name="twitter:description" content="docker version  显示 Docker 版本信息   docker search redis  从 Docker Hub 查找镜像   docker pull redis or docker pull redis:latest or docker pull redis:other-version  从镜像仓库中拉取或者更新指定镜像   docker images or docker">
+<meta name="twitter:description" content="Use command --help is helpful.">
 
 
 
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  61
+                  421
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -384,7 +384,11 @@
       
 
       
-        <ul>
+        <blockquote>
+<p>Use <code>command --help</code> is helpful.</p>
+</blockquote>
+<a id="more"></a>
+<ul>
 <li><p><code>docker version</code></p>
 <ul>
 <li>显示 Docker 版本信息</li>
@@ -400,12 +404,11 @@
 <li>从镜像仓库中拉取或者更新指定镜像</li>
 </ul>
 </li>
-<li><p><code>docker images</code> or <code>docker images redis</code></p>
-<ul>
-<li>列出本地镜像</li>
 </ul>
-</li>
-</ul>
+<h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a><code>docker images</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ docker images --help</span><br><span class="line"></span><br><span class="line">Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]</span><br><span class="line"></span><br><span class="line">List images</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -a, --all             Show all images (default hides intermediate images)</span><br><span class="line">      --digests         Show digests</span><br><span class="line">  -f, --filter filter   Filter output based on conditions provided</span><br><span class="line">      --format string   Pretty-print images using a Go template</span><br><span class="line">      --no-trunc        Don&apos;t truncate output</span><br><span class="line">  -q, --quiet           Only show numeric IDs</span><br></pre></td></tr></table></figure>
+<h2 id="docker-image"><a href="#docker-image" class="headerlink" title="docker image"></a><code>docker image</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ docker image --help </span><br><span class="line"></span><br><span class="line">Usage:  docker image COMMAND</span><br><span class="line"></span><br><span class="line">Manage images</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  build       Build an image from a Dockerfile</span><br><span class="line">  history     Show the history of an image</span><br><span class="line">  import      Import the contents from a tarball to create a filesystem image</span><br><span class="line">  inspect     Display detailed information on one or more images</span><br><span class="line">  load        Load an image from a tar archive or STDIN</span><br><span class="line">  ls          List images</span><br><span class="line">  prune       Remove unused images</span><br><span class="line">  pull        Pull an image or a repository from a registry</span><br><span class="line">  push        Push an image or a repository to a registry</span><br><span class="line">  rm          Remove one or more images</span><br><span class="line">  save        Save one or more images to a tar archive (streamed to STDOUT by default)</span><br><span class="line">  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE</span><br><span class="line"></span><br><span class="line">Run &apos;docker image COMMAND --help&apos; for more information on a command.</span><br></pre></td></tr></table></figure>
+<h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a><code>docker ps</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps --help</span><br><span class="line"></span><br><span class="line">Usage:  docker ps [OPTIONS]</span><br><span class="line"></span><br><span class="line">List containers</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -a, --all             Show all containers (default shows just running)</span><br><span class="line">  -f, --filter filter   Filter output based on conditions provided</span><br><span class="line">      --format string   Pretty-print containers using a Go template</span><br><span class="line">  -n, --last int        Show n last created containers (includes all states) (default -1)</span><br><span class="line">  -l, --latest          Show the latest created container (includes all states)</span><br><span class="line">      --no-trunc        Don&apos;t truncate output</span><br><span class="line">  -q, --quiet           Only display numeric IDs</span><br><span class="line">  -s, --size            Display total file sizes</span><br></pre></td></tr></table></figure>
+<h2 id="docker-rm"><a href="#docker-rm" class="headerlink" title="docker rm"></a><code>docker rm</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ docker rm --help</span><br><span class="line"></span><br><span class="line">Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line"></span><br><span class="line">Remove one or more containers</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -f, --force     Force the removal of a running container (uses SIGKILL)</span><br><span class="line">  -l, --link      Remove the specified link</span><br><span class="line">  -v, --volumes   Remove the volumes associated with the container</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -521,8 +524,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,7 +549,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +571,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -599,6 +611,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-images"><span class="nav-number">1.</span> <span class="nav-text">docker images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-image"><span class="nav-number">2.</span> <span class="nav-text">docker image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-ps"><span class="nav-number">3.</span> <span class="nav-text">docker ps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-rm"><span class="nav-number">4.</span> <span class="nav-text">docker rm</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
