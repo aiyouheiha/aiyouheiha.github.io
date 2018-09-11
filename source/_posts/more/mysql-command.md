@@ -123,6 +123,23 @@ GRANT INSERT, DELETE, UPDATE, SELECT ON db_name.* TO 'username'@'host';
 GRANT ALL ON db_name.* TO 'username'@'host';
 ```
 
+```
+> GRANT INSERT, DELETE, UPDATE, SELECT ON test.* TO 'root'@'172.17.%.%';
+> select Host, User, Password from user;
++------------+------+-------------------------------------------+
+| Host       | User | Password                                  |
++------------+------+-------------------------------------------+
+| 172.17.%.% | root |                                           |
++------------+------+-------------------------------------------+
+> GRANT INSERT, DELETE, UPDATE, SELECT ON test.* TO 'root'@'172.17.%.%' identified by '123456';
+> select Host, User, Password from user;
++------------+------+-------------------------------------------+
+| Host       | User | Password                                  |
++------------+------+-------------------------------------------+
+| 172.17.%.% | root | *6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9 |
++------------+------+-------------------------------------------+
+```
+
 ### 取消授权
 
 ```mysql
