@@ -13,6 +13,24 @@ keywords: Docker
 
 ---
 
+## 为镜像创建一个临时容器并进入 shell
+
+> 可用于查看容器内部详情
+
+```
+$ docker run --rm -it docker.elastic.co/logstash/logstash:6.4.0 /bin/sh
+```
+
+参数说明
+
+```
+--rm                     Automatically remove the container when it exits
+-i, --interactive        Keep STDIN open even if not attached
+-t, --tty                Allocate a pseudo-TTY
+```
+
+---
+
 ## 获取容器 IP
 
 ```
@@ -66,6 +84,12 @@ $ docker save -o logstash.6.4.0.tar docker.elastic.co/logstash/logstash:6.4.0
 
 ```
 $ docker load --input logstash.6.4.0.tar
+```
+
+参数说明
+
+```
+-i, --input string        Read from tar archive file, instead of STDIN
 ```
 
 或者
