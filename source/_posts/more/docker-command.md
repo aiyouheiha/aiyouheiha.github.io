@@ -13,7 +13,19 @@ keywords: Docker
 
 ---
 
-## 为镜像创建一个临时容器并进入 shell
+## 进入一个运行中的容器
+
+```
+$ docker ps
+CONTAINER ID        IMAGE                                                 COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+e1d35567ba72        docker.elastic.co/logstash/logstash:6.4.0             "/usr/local/bin/dock…"   3 minutes ago       Up 3 minutes        5044/tcp, 0.0.0.0:4567->4567/tcp, 9600/tcp         logstash
+$ docker exec -it e1d35567ba72 /bin/sh
+sh-4.2$
+```
+
+---
+
+## 为镜像创建一个临时容器并进入
 
 > 可用于查看容器内部详情
 
