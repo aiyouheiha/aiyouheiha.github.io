@@ -33,4 +33,6 @@ keywords: Star UML
 - Dependency: Animal dependency water and air => animal TO water and air
 - Association: Animal associate with climate => animal TO climate
 
+**Note** It seems that class A points to B (`A => B`) while A contains B (`A extends B`)
+
 
