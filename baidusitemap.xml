@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://ashman.top/2018/07/14/more/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%8F%E8%AE%B0_1/</loc>
+    <lastmod>2018-11-02T02:22:57.721Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序小记_1</title>
+        <pubTime>2018-07-14T14:54:03.000Z</pubTime>
+        
+        <tag>微信小程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="微信小程序" url="http://ashman.top/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2018/11/02/more/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%8F%E8%AE%B0_2/</loc>
+    <lastmod>2018-11-02T02:22:45.589Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序小记_2</title>
+        <pubTime>2018-11-02T02:00:57.000Z</pubTime>
+        
+        <tag>微信小程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="微信小程序" url="http://ashman.top/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2018/09/18/more/manage-java-environment/</loc>
     <lastmod>2018-09-18T08:44:31.201Z</lastmod>
     <data>
@@ -199,26 +239,6 @@
            
              
               <breadCrumb title="更多" url="http://ashman.top/categories/%E6%9B%B4%E5%A4%9A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2018/07/14/more/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91%E8%AE%B0/</loc>
-    <lastmod>2018-07-14T19:15:18.308Z</lastmod>
-    <data>
-        <display>
-        <title>小程序踩坑记</title>
-        <pubTime>2018-07-14T14:54:03.000Z</pubTime>
-        
-        <tag>小程序</tag>
-         
-         
-           
-             
-              <breadCrumb title="小程序" url="http://ashman.top/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
           
         </display>
     </data>
@@ -706,6 +726,32 @@
 
     
   <url>
+    <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
+    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Cloud Ribbon 简介</title>
+        <pubTime>2017-11-08T11:20:37.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Boot</tag>
+         
+        <tag>Spring Cloud</tag>
+         
+        <tag>Ribbon</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Cloud" url="http://ashman.top/categories/Spring-Cloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ashman.top/2017/11/13/spring/spring-data/jpa/spring-data-jpa-auditing/</loc>
     <lastmod>2017-11-21T15:32:33.836Z</lastmod>
     <data>
@@ -730,25 +776,23 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/11/08/spring/spring-cloud/ribbon/spring-cloud-ribbon-intro/</loc>
-    <lastmod>2017-11-21T15:32:33.836Z</lastmod>
+    <loc>http://ashman.top/2017/11/21/spring/spring-boot/spring-boot-with-swagger/</loc>
+    <lastmod>2017-11-21T15:32:33.835Z</lastmod>
     <data>
         <display>
-        <title>Spring Cloud Ribbon 简介</title>
-        <pubTime>2017-11-08T11:20:37.000Z</pubTime>
+        <title>Spring Boot with Swagger</title>
+        <pubTime>2017-11-21T10:40:43.000Z</pubTime>
         
-        <tag>Java</tag>
-         
         <tag>Spring Boot</tag>
          
-        <tag>Spring Cloud</tag>
+        <tag>Swagger</tag>
          
-        <tag>Ribbon</tag>
+        <tag>RESTful API</tag>
          
          
            
              
-              <breadCrumb title="Spring Cloud" url="http://ashman.top/categories/Spring-Cloud/"/>
+              <breadCrumb title="Spring Boot" url="http://ashman.top/categories/Spring-Boot/"/>
           
         </display>
     </data>
@@ -782,30 +826,6 @@
 
     
   <url>
-    <loc>http://ashman.top/2017/11/21/spring/spring-boot/spring-boot-with-swagger/</loc>
-    <lastmod>2017-11-21T15:32:33.835Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot with Swagger</title>
-        <pubTime>2017-11-21T10:40:43.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-        <tag>Swagger</tag>
-         
-        <tag>RESTful API</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://ashman.top/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ashman.top/2017/11/14/java/equals-or-not/</loc>
     <lastmod>2017-11-21T15:32:33.835Z</lastmod>
     <data>
@@ -820,6 +840,21 @@
              
               <breadCrumb title="Java" url="http://ashman.top/categories/Java/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
+    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -842,21 +877,6 @@
              
               <breadCrumb title="MongoDB" url="http://ashman.top/categories/MongoDB/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ashman.top/2017/11/12/hello-world/</loc>
-    <lastmod>2017-11-12T09:52:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2017-11-12T09:52:52.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
