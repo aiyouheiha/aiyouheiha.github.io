@@ -14,13 +14,29 @@ keywords: MongoDB
 ## 远程登录
 
 ```
-mongo x.x.x.x:27017/target
+$ mongo x.x.x.x:27017/target
+```
+
+```
+$ mongo x.x.x.x:27017/target -u username -p
+MongoDB shell version v3.6.1
+Enter password: 
 ```
 
 ## 版本号
 
 ```
 db.version()
+```
+
+## 身份认证
+
+```
+> db.auth("admin", "123455")
+Error: Authentication failed.
+0
+> db.auth("admin", "123456")
+1
 ```
 
 ## 数据库列表
