@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Singo &amp; Asher">
 <meta property="og:description" content="这里会简单介绍 MongoDB 操作命令（持续更新……）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-21T01:44:49.814Z">
+<meta property="og:updated_time" content="2018-11-13T02:20:09.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB 命令">
 <meta name="twitter:description" content="这里会简单介绍 MongoDB 操作命令（持续更新……）">
@@ -267,7 +267,7 @@
     <link itemprop="mainEntityOfPage" href="http://ashman.top/2017/11/06/mongodb/mongodb-command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Asher">
+      <meta itemprop="name" content="沐烬">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  236
+                  279
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -386,8 +386,10 @@
       
         <p>这里会简单介绍 MongoDB 操作命令（持续更新……）</p>
 <a id="more"></a>
-<h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo x.x.x.x:27017/target</span><br></pre></td></tr></table></figure>
+<h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongo x.x.x.x:27017/target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mongo x.x.x.x:27017/target -u username -p</span><br><span class="line">MongoDB shell version v3.6.1</span><br><span class="line">Enter password:</span><br></pre></td></tr></table></figure>
 <h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.version()</span><br></pre></td></tr></table></figure>
+<h2 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.auth(&quot;admin&quot;, &quot;123455&quot;)</span><br><span class="line">Error: Authentication failed.</span><br><span class="line">0</span><br><span class="line">&gt; db.auth(&quot;admin&quot;, &quot;123456&quot;)</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 <h2 id="数据库列表"><a href="#数据库列表" class="headerlink" title="数据库列表"></a>数据库列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure>
 <h2 id="当前位置"><a href="#当前位置" class="headerlink" title="当前位置"></a>当前位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db</span><br></pre></td></tr></table></figure>
 <h2 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show users</span><br><span class="line">db.system.users.find()</span><br></pre></td></tr></table></figure>
@@ -530,7 +532,7 @@ var jiathis_config={
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Asher</p>
+              <p class="site-author-name" itemprop="name">沐烬</p>
               <p class="site-description motion-element" itemprop="description">静坐常思己过，闲谈莫论人非</p>
           </div>
 
@@ -552,7 +554,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -563,7 +565,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -613,7 +615,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#远程登录"><span class="nav-number">1.</span> <span class="nav-text">远程登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本号"><span class="nav-number">2.</span> <span class="nav-text">版本号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库列表"><span class="nav-number">3.</span> <span class="nav-text">数据库列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前位置"><span class="nav-number">4.</span> <span class="nav-text">当前位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看用户"><span class="nav-number">5.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">6.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询文档"><span class="nav-number">7.</span> <span class="nav-text">查询文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入文档"><span class="nav-number">8.</span> <span class="nav-text">插入文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新文档"><span class="nav-number">9.</span> <span class="nav-text">更新文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文档"><span class="nav-number">10.</span> <span class="nav-text">删除文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#远程登录"><span class="nav-number">1.</span> <span class="nav-text">远程登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本号"><span class="nav-number">2.</span> <span class="nav-text">版本号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#身份认证"><span class="nav-number">3.</span> <span class="nav-text">身份认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库列表"><span class="nav-number">4.</span> <span class="nav-text">数据库列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前位置"><span class="nav-number">5.</span> <span class="nav-text">当前位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看用户"><span class="nav-number">6.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">7.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询文档"><span class="nav-number">8.</span> <span class="nav-text">查询文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入文档"><span class="nav-number">9.</span> <span class="nav-text">插入文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新文档"><span class="nav-number">10.</span> <span class="nav-text">更新文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文档"><span class="nav-number">11.</span> <span class="nav-text">删除文档</span></a></li></ol></div>
             
 
           </div>
@@ -637,7 +639,7 @@ var jiathis_config={
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Asher</span>
+  <span class="author" itemprop="copyrightHolder">沐烬</span>
 
   
 </div>
